@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/icons/bloodpressure.png</file>
+        <file>resources/icons/bmi.png</file>
+        <file>resources/icons/height.png</file>
+        <file>resources/icons/help.png</file>
+        <file>resources/icons/pulserate.png</file>
+        <file>resources/icons/restart.png</file>
+        <file>resources/icons/statusgreen.png</file>
+        <file>resources/icons/statusred.png</file>
+        <file>resources/icons/temperature.png</file>
+        <file>resources/icons/weight.png</file>
+        <file>resources/images/mainback.jpg</file>
+        <file>resources/images/mainbackhigh.jpg</file>
+    </qresource>
+</RCC>

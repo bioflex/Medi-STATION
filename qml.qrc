@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>TopPanel.qml</file>
+        <file>TopPanelForm.ui.qml</file>
+        <file>BottomPanel.qml</file>
+        <file>BottomPanelForm.ui.qml</file>
+        <file>WelcomePage.qml</file>
+        <file>WelcomePageForm.ui.qml</file>
+        <file>ScreeningMain.qml</file>
+        <file>ScreeningMainForm.ui.qml</file>
+        <file>WeightScreen.qml</file>
+        <file>WeightScreenForm.ui.qml</file>
+    </qresource>
+</RCC>
