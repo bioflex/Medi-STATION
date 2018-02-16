@@ -17,7 +17,7 @@ Item {
         Rectangle {
             id: rectangle
             width: 180
-            color: "#22272a"
+            color: "#30373d"
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.bottom: parent.bottom
@@ -30,7 +30,7 @@ Item {
                 y: 80
                 width: 180
                 height: 60
-                color: "#30373d"
+                color: "#22272a"
 
                 Text {
                     id: text1
@@ -48,7 +48,7 @@ Item {
                 y: 140
                 width: 180
                 height: 60
-                color: "#30373d"
+                color: "#22272a"
 
                 Text {
                     id: text2
@@ -66,7 +66,7 @@ Item {
                 y: 200
                 width: 180
                 height: 60
-                color: "#30373d"
+                color: "#22272a"
 
                 Text {
                     id: text3
@@ -84,7 +84,7 @@ Item {
                 y: 260
                 width: 180
                 height: 60
-                color: "#30373d"
+                color: "#22272a"
 
                 Text {
                     id: text4
@@ -102,7 +102,7 @@ Item {
                 y: 320
                 width: 180
                 height: 60
-                color: "#30373d"
+                color: "#22272a"
 
                 Text {
                     id: text5
@@ -126,6 +126,10 @@ Item {
             StackLayout {
                 id: detailStackLayout
                 anchors.fill: parent
+
+                WeightScreen {
+                    id: weightScreen
+                }
             }
         }
     }

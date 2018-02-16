@@ -8,6 +8,7 @@ Item {
 
     Rectangle {
         id: topPanelRect
+        color: "#e1e1e1"
         gradient: Gradient {
             GradientStop {
                 position: 0
@@ -137,7 +138,7 @@ Item {
                     width: 45
                     height: 45
                     fillMode: Image.PreserveAspectFit
-                    source: "resources/icons/restart.png"
+                    source: "resources/icons/home.png"
                 }
             }
         }
@@ -158,21 +159,23 @@ Item {
                 gradient: Gradient {
                     GradientStop {
                         position: 0
-                        color: "#0e4df1"
+                        color: "#6476a4"
                     }
 
                     GradientStop {
                         position: 1
-                        color: "#212d4b"
+                        color: "#405383"
                     }
                 }
 
                 Image {
                     id: helpImage
-                    width: 45
-                    height: 45
+                    width: 40
+                    height: 40
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.horizontalCenter: parent.horizontalCenter
                     fillMode: Image.PreserveAspectFit
-                    source: "resources/icons/help.png"
+                    source: "resources/icons/help3.png"
                 }
             }
         }

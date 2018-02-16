@@ -12,5 +12,9 @@
         <file>resources/icons/weight.png</file>
         <file>resources/images/mainback.jpg</file>
         <file>resources/images/mainbackhigh.jpg</file>
+        <file>resources/icons/backspace_white.png</file>
+        <file>resources/icons/help2.png</file>
+        <file>resources/icons/help3.png</file>
+        <file>resources/icons/home.png</file>
     </qresource>
 </RCC>

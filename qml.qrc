@@ -12,5 +12,7 @@
         <file>ScreeningMainForm.ui.qml</file>
         <file>WeightScreen.qml</file>
         <file>WeightScreenForm.ui.qml</file>
+        <file>Login.qml</file>
+        <file>LoginForm.ui.qml</file>
     </qresource>
 </RCC>

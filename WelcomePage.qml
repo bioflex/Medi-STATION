@@ -5,6 +5,9 @@ WelcomePageForm
     property color buttonBaseColor: "white"
     property  color  buttonPressedColor: "#a9abad"
 
+    guestMouseArea.onPressed: {
+    }
+
     userLoginMouseArea.onPressed: {
     }
 

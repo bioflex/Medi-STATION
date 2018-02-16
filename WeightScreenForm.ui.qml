@@ -17,14 +17,14 @@ Item {
 
             Text {
                 id: text1
-                text: qsTr("Text")
+                text: "PLEASE STAND ON THE WEIGHT PAD TO  MEASURE WEIGHT"
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 font.pixelSize: 12
             }
 
             TextArea {
                 id: textArea
-                text: qsTr("Text Area")
+                text: qsTr("NB: CARRYING ADDITIONAL WEIGHT MAY AFFECT THE ACCURACY OF THE MEASUREMENT")
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             }
         }
