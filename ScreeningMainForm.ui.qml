@@ -6,6 +6,12 @@ Item {
     id: item1
     width: 800
     height: 420
+    property alias weightScreen: weightScreen
+    property alias bpRect: bpRect
+    property alias pulseRect: pulseRect
+    property alias tempRect: tempRect
+    property alias heightRect: heightRect
+    property alias weightRect: weightRect
     property alias detailStackLayout: detailStackLayout
     property alias screenDetailRect: screenDetailRect
 
@@ -26,7 +32,7 @@ Item {
             anchors.leftMargin: 0
 
             Rectangle {
-                id: rectangle2
+                id: weightRect
                 y: 80
                 width: 180
                 height: 60
@@ -43,7 +49,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle3
+                id: heightRect
                 x: 0
                 y: 140
                 width: 180
@@ -61,7 +67,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle4
+                id: tempRect
                 x: 0
                 y: 200
                 width: 180
@@ -79,7 +85,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle5
+                id: pulseRect
                 x: 0
                 y: 260
                 width: 180
@@ -97,7 +103,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle6
+                id: bpRect
                 x: 0
                 y: 320
                 width: 180
@@ -130,8 +136,21 @@ Item {
                 WeightScreen {
                     id: weightScreen
                 }
+
+                HeightScreen {
+                    id: heightScreen
+                }
             }
         }
     }
 
+    Image {
+        id: image
+        x: 15
+        y: 10
+        width: 150
+        height: 60
+        fillMode: Image.PreserveAspectFit
+        source: "resources/icons/Medi-Station-logo.png"
+    }
 }

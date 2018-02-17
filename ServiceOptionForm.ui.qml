@@ -6,6 +6,10 @@ Item {
     id: item1
     width: 800
     height: 420
+    property alias searchDirectoryMouseArea: searchDirectoryMouseArea
+    property alias findNearMouseArea: findNearMouseArea
+    property alias customStartMouseArea: customStartMouseArea
+    property alias fullStartMouseArea: fullStartMouseArea
     property alias text5: text5
 
     ColumnLayout {
@@ -14,7 +18,7 @@ Item {
         anchors.fill: parent
 
         Rectangle {
-            id: rectangle3
+            id: serviceHeaderRect
             height: 100
             color: "#f0f0f2"
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
@@ -26,7 +30,7 @@ Item {
             anchors.topMargin: 0
 
             Text {
-                id: text1
+                id: serviceHeaderText
                 x: 0
                 y: 406
                 text: qsTr("PLEASE SELECT FROM THE AVAILABLE SERVICES TO CONTINUE")
@@ -37,7 +41,7 @@ Item {
         }
 
         RowLayout {
-            id: rowLayout
+            id: serviceOptionsRowLayout
             width: 100
             height: 320
             Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
@@ -45,7 +49,7 @@ Item {
             spacing: 0
 
             Rectangle {
-                id: rectangle2
+                id: fullServiceRect
                 width: 200
                 height: 200
                 color: "#f0f0f2"
@@ -74,7 +78,7 @@ Item {
                 }
 
                 Rectangle {
-                    id: rectangle6
+                    id: fullStartRect
                     y: 229
                     width: 230
                     height: 70
@@ -94,14 +98,14 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea
+                        id: fullStartMouseArea
                         anchors.fill: parent
                     }
                 }
             }
 
             Rectangle {
-                id: rectangle1
+                id: customServiceRect
                 width: 200
                 height: 200
                 color: "#f0f0f2"
@@ -131,7 +135,7 @@ Item {
                 }
 
                 Rectangle {
-                    id: rectangle7
+                    id: customStartRect
                     x: -233
                     y: 229
                     width: 230
@@ -149,7 +153,7 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea1
+                        id: customStartMouseArea
                         anchors.fill: parent
                     }
                     anchors.horizontalCenterOffset: 0
@@ -158,7 +162,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle
+                id: otherServicesRect
                 width: 200
                 height: 200
                 color: "#ffffff"
@@ -167,12 +171,12 @@ Item {
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
 
                 ColumnLayout {
-                    id: columnLayout1
+                    id: otherServicesColumnLayout
                     spacing: 0
                     anchors.fill: parent
 
                     Rectangle {
-                        id: rectangle4
+                        id: findHealthServicesRect
                         width: 200
                         height: 200
                         color: "#f0f0f2"
@@ -190,7 +194,7 @@ Item {
                         }
 
                         Rectangle {
-                            id: rectangle8
+                            id: findNearRect
                             x: -499
                             y: 82
                             width: 200
@@ -208,7 +212,7 @@ Item {
                             }
 
                             MouseArea {
-                                id: mouseArea2
+                                id: findNearMouseArea
                                 anchors.fill: parent
                             }
                             anchors.horizontalCenterOffset: 0
@@ -217,7 +221,7 @@ Item {
                     }
 
                     Rectangle {
-                        id: rectangle5
+                        id: findHealthDirectoryRect
                         width: 200
                         height: 200
                         color: "#f0f0f2"
@@ -236,7 +240,7 @@ Item {
                         }
 
                         Rectangle {
-                            id: rectangle9
+                            id: searchDirectoryRect
                             x: 34
                             y: 71
                             width: 200
@@ -254,7 +258,7 @@ Item {
                             }
 
                             MouseArea {
-                                id: mouseArea3
+                                id: searchDirectoryMouseArea
                                 anchors.fill: parent
                             }
                             anchors.horizontalCenterOffset: 0

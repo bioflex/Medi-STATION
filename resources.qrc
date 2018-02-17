@@ -17,5 +17,6 @@
         <file>resources/icons/help3.png</file>
         <file>resources/icons/home.png</file>
         <file>resources/images/dudeonscale.jpg</file>
+        <file>resources/icons/Medi-Station-logo.png</file>
     </qresource>
 </RCC>

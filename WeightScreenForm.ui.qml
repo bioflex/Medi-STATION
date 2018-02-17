@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias nextMouseArea: nextMouseArea
 
     ColumnLayout {
         id: columnLayout
@@ -78,6 +79,28 @@ Item {
                     color: "#ffffff"
                     Layout.fillWidth: true
                     Layout.fillHeight: true
+
+                    Rectangle {
+                        id: rectangle4
+                        width: 200
+                        height: 200
+                        color: "#ffffff"
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.verticalCenter: parent.verticalCenter
+
+                        Text {
+                            id: text2
+                            text: qsTr("PROCEED")
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.verticalCenter: parent.verticalCenter
+                            font.pixelSize: 12
+                        }
+
+                        MouseArea {
+                            id: nextMouseArea
+                            anchors.fill: parent
+                        }
+                    }
                 }
             }
         }

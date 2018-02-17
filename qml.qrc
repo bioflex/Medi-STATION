@@ -16,5 +16,13 @@
         <file>LoginForm.ui.qml</file>
         <file>ServiceOption.qml</file>
         <file>ServiceOptionForm.ui.qml</file>
+        <file>HeightScreen.qml</file>
+        <file>HeightScreenForm.ui.qml</file>
+        <file>TemperatureScreen.qml</file>
+        <file>TemperatureScreenForm.ui.qml</file>
+        <file>PulseScreen.qml</file>
+        <file>PulseScreenForm.ui.qml</file>
+        <file>BloodPressureScreen.qml</file>
+        <file>BloodPressureScreenForm.ui.qml</file>
     </qresource>
 </RCC>

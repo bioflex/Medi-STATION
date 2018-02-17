@@ -22,24 +22,27 @@ ApplicationWindow {
         {
             id: welcomeId
             userLoginMouseArea.onClicked: mainStack.currentIndex = 1
-            guestMouseArea.onClicked: mainStack.currentIndex = 3
+            guestMouseArea.onClicked: mainStack.currentIndex = 2
         }
 
         Login
         {
+            id: loginId
             loginMouseArea.onClicked: mainStack.currentIndex = 2
         }
 
         ServiceOption
         {
-
+            id: serviceId
+            fullStartMouseArea.onClicked: mainStack.currentIndex = 3
         }
 
         ScreeningMain
         {
             id: screenMainId
 
-
+            //detailStackLayout.currentIndex: 0s
+            weightScreen.nextMouseArea.onClicked: detailStackLayout.currentIndex++
         }
 
     }

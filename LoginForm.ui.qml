@@ -5,6 +5,17 @@ import QtQuick.Layouts 1.3
 Item {
     width: 800
     height: 420
+    property alias keyBackMouseArea: keyBackMouseArea
+    property alias keyZeroMouseArea: keyZeroMouseArea
+    property alias keyNineMouseArea: keyNineMouseArea
+    property alias keyEightMouseArea: keyEightMouseArea
+    property alias keySevenMouseArea: keySevenMouseArea
+    property alias keySixMouseArea: keySixMouseArea
+    property alias keyFiveMouseArea: keyFiveMouseArea
+    property alias keyFourMouseArea: keyFourMouseArea
+    property alias keyThreeMouseArea: keyThreeMouseArea
+    property alias keyTwoMouseArea: keyTwoMouseArea
+    property alias keyOneMouseArea: keyOneMouseArea
     property alias loginMouseArea: loginMouseArea
     property alias userPinTextField: userPinTextField
     property alias userNumberTextField: userNumberTextField
@@ -110,7 +121,7 @@ Item {
         }
 
         Rectangle {
-            id: rectangle1
+            id: keypadRect
             width: 400
             height: 200
             color: "#615f64"
@@ -118,20 +129,17 @@ Item {
             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
             Layout.fillHeight: true
 
-            Grid {
-                id: grid
-                x: 0
-                y: 10
+            GridLayout {
+                id: keypadGridLayout
                 width: 190
                 height: 255
-                spacing: 5
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-                rows: 4
                 columns: 3
+                rows: 0
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
 
                 Rectangle {
-                    id: rectangle4
+                    id: keyOneRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
@@ -148,13 +156,13 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea
+                        id: keyOneMouseArea
                         anchors.fill: parent
                     }
                 }
 
                 Rectangle {
-                    id: rectangle5
+                    id: keyTwoRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
@@ -171,13 +179,13 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea1
+                        id: keyTwoMouseArea
                         anchors.fill: parent
                     }
                 }
 
                 Rectangle {
-                    id: rectangle6
+                    id: keyThreeRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
@@ -193,13 +201,13 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea2
+                        id: keyThreeMouseArea
                         anchors.fill: parent
                     }
                 }
 
                 Rectangle {
-                    id: rectangle7
+                    id: keyFourRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
@@ -215,13 +223,13 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea3
+                        id: keyFourMouseArea
                         anchors.fill: parent
                     }
                 }
 
                 Rectangle {
-                    id: rectangle8
+                    id: keyFiveRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
@@ -237,13 +245,13 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea4
+                        id: keyFiveMouseArea
                         anchors.fill: parent
                     }
                 }
 
                 Rectangle {
-                    id: rectangle9
+                    id: keySixRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
@@ -259,13 +267,13 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea5
+                        id: keySixMouseArea
                         anchors.fill: parent
                     }
                 }
 
                 Rectangle {
-                    id: rectangle10
+                    id: keySevenRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
@@ -281,13 +289,13 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea6
+                        id: keySevenMouseArea
                         anchors.fill: parent
                     }
                 }
 
                 Rectangle {
-                    id: rectangle11
+                    id: keyEightRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
@@ -303,13 +311,13 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea7
+                        id: keyEightMouseArea
                         anchors.fill: parent
                     }
                 }
 
                 Rectangle {
-                    id: rectangle12
+                    id: keyNineRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
@@ -324,13 +332,13 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea8
+                        id: keyNineMouseArea
                         anchors.fill: parent
                     }
                 }
 
                 Rectangle {
-                    id: rectangle13
+                    id: keyZeroRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
@@ -346,29 +354,30 @@ Item {
                     }
 
                     MouseArea {
-                        id: mouseArea9
+                        id: keyZeroMouseArea
                         anchors.fill: parent
                     }
                 }
 
                 Rectangle {
-                    id: rectangle14
+                    id: keyBackRect
                     width: 60
                     height: 60
                     color: "#b4b4b4"
                     radius: 10
+                    Layout.fillWidth: false
 
                     Image {
                         id: image
                         width: 40
-                        height: 40
+                        height: 30
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         source: "resources/icons/backspace_white.png"
                     }
 
                     MouseArea {
-                        id: mouseArea10
+                        id: keyBackMouseArea
                         anchors.fill: parent
                     }
                 }
