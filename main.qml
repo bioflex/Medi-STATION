@@ -22,10 +22,15 @@ ApplicationWindow {
         {
             id: welcomeId
             userLoginMouseArea.onClicked: mainStack.currentIndex = 1
-            guestMouseArea.onClicked: mainStack.currentIndex = 2
+            guestMouseArea.onClicked: mainStack.currentIndex = 3
         }
 
         Login
+        {
+            loginMouseArea.onClicked: mainStack.currentIndex = 2
+        }
+
+        ServiceOption
         {
 
         }

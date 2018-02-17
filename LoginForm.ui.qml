@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 Item {
     width: 800
     height: 420
+    property alias loginMouseArea: loginMouseArea
     property alias userPinTextField: userPinTextField
     property alias userNumberTextField: userNumberTextField
 
@@ -102,7 +103,7 @@ Item {
                 }
 
                 MouseArea {
-                    id: mouseArea11
+                    id: loginMouseArea
                     anchors.fill: parent
                 }
             }

@@ -6,26 +6,79 @@ Item {
     width: 620
     height: 420
 
-    Rectangle {
-        id: rectangle
-        color: "#ffffff"
+    ColumnLayout {
+        id: columnLayout
         anchors.fill: parent
+        spacing: 0
 
-        ColumnLayout {
-            id: columnLayout
-            anchors.fill: parent
+        Rectangle {
+            id: rectangle
+            width: 200
+            height: 100
+            color: "#ffffff"
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
 
             Text {
                 id: text1
-                text: "PLEASE STAND ON THE WEIGHT PAD TO  MEASURE WEIGHT"
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                y: 15
+                text: "PLEASE STAND ON THE WEIGHT SCALE TO TAKE MEASUREMENT"
+                anchors.horizontalCenterOffset: 0
+                anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: 12
             }
 
             TextArea {
                 id: textArea
-                text: qsTr("NB: CARRYING ADDITIONAL WEIGHT MAY AFFECT THE ACCURACY OF THE MEASUREMENT")
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                x: 0
+                y: 38
+                width: 512
+                height: 46
+                text: qsTr("NB: For accurate weight measurement, ensure that you are not carrying and additional weight")
+                placeholderText: ""
+                anchors.horizontalCenterOffset: 0
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+        }
+
+        Rectangle {
+            id: rectangle1
+            width: 200
+            height: 200
+            color: "#ffffff"
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+
+            RowLayout {
+                id: rowLayout
+                anchors.fill: parent
+                spacing: 0
+
+                Rectangle {
+                    id: rectangle2
+                    width: 200
+                    height: 200
+                    color: "#ffffff"
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+
+                    Image {
+                        id: image
+                        fillMode: Image.PreserveAspectFit
+                        anchors.fill: parent
+                        source: "resources/images/dudeonscale.jpg"
+                    }
+                }
+
+                Rectangle {
+                    id: rectangle3
+                    width: 200
+                    height: 200
+                    color: "#ffffff"
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                }
             }
         }
     }

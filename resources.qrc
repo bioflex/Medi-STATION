@@ -16,5 +16,6 @@
         <file>resources/icons/help2.png</file>
         <file>resources/icons/help3.png</file>
         <file>resources/icons/home.png</file>
+        <file>resources/images/dudeonscale.jpg</file>
     </qresource>
 </RCC>

@@ -14,5 +14,7 @@
         <file>WeightScreenForm.ui.qml</file>
         <file>Login.qml</file>
         <file>LoginForm.ui.qml</file>
+        <file>ServiceOption.qml</file>
+        <file>ServiceOptionForm.ui.qml</file>
     </qresource>
 </RCC>
