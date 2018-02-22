@@ -18,5 +18,37 @@
         <file>resources/icons/home.png</file>
         <file>resources/images/dudeonscale.jpg</file>
         <file>resources/icons/Medi-Station-logo.png</file>
+        <file>resources/fonts/7SDD.TTF</file>
+        <file>resources/fonts/digital display tfb.ttf</file>
+        <file>resources/fonts/digital-7 (italic).ttf</file>
+        <file>resources/fonts/digital-7 (mono italic).ttf</file>
+        <file>resources/fonts/digital-7 (mono).ttf</file>
+        <file>resources/fonts/digital-7.ttf</file>
+        <file>resources/fonts/DS-DIGI.TTF</file>
+        <file>resources/fonts/DS-DIGIB.TTF</file>
+        <file>resources/fonts/DS-DIGII.TTF</file>
+        <file>resources/fonts/DS-DIGIT.TTF</file>
+        <file>resources/fonts/KrinkesDecorPERSONAL.ttf</file>
+        <file>resources/fonts/KrinkesRegularPERSONAL.ttf</file>
+        <file>resources/fonts/Roboto-Black.ttf</file>
+        <file>resources/fonts/Roboto-BlackItalic.ttf</file>
+        <file>resources/fonts/Roboto-Bold.ttf</file>
+        <file>resources/fonts/Roboto-BoldItalic.ttf</file>
+        <file>resources/fonts/RobotoCondensed-Bold.ttf</file>
+        <file>resources/fonts/RobotoCondensed-BoldItalic.ttf</file>
+        <file>resources/fonts/RobotoCondensed-Italic.ttf</file>
+        <file>resources/fonts/RobotoCondensed-Light.ttf</file>
+        <file>resources/fonts/RobotoCondensed-LightItalic.ttf</file>
+        <file>resources/fonts/RobotoCondensed-Regular.ttf</file>
+        <file>resources/fonts/Roboto-Italic.ttf</file>
+        <file>resources/fonts/Roboto-Light.ttf</file>
+        <file>resources/fonts/Roboto-LightItalic.ttf</file>
+        <file>resources/fonts/Roboto-Medium.ttf</file>
+        <file>resources/fonts/Roboto-MediumItalic.ttf</file>
+        <file>resources/fonts/Roboto-Regular.ttf</file>
+        <file>resources/fonts/Roboto-Thin.ttf</file>
+        <file>resources/fonts/Roboto-ThinItalic.ttf</file>
+        <file>resources/fonts/HELR45W.ttf</file>
+        <file>resources/fonts/Helvetica Black.ttf</file>
     </qresource>
 </RCC>

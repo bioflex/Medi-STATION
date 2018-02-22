@@ -5,6 +5,11 @@ import QtQuick.Controls 2.2
 Item {
     width: 800
     height: 50
+    property alias statusText: statusText
+    property alias helpMouseArea: helpMouseArea
+    property alias image: image
+    property alias dateTimeText: dateTimeText
+    property alias homeMouseArea: homeMouseArea
 
     Rectangle {
         id: topPanelRect
@@ -101,84 +106,75 @@ Item {
             }
         }
 
-        MouseArea {
-            id: restartMouseArea
-            x: 1400
-            width: 45
-            anchors.top: parent.top
-            anchors.topMargin: 4
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 1
-            anchors.right: parent.right
-            anchors.rightMargin: -636
-
-            Rectangle {
-                id: restartRect
-                x: -700
-                y: -2
-                width: 45
-                height: 45
-                radius: 2
-                gradient: Gradient {
-                    GradientStop {
-                        position: 0
-                        color: "#58aadd"
-                    }
-
-                    GradientStop {
-                        position: 1
-                        color: "#0e3688"
-                    }
-                }
-
-                Image {
-                    id: restartImage
-                    x: 0
-                    y: 0
-                    width: 45
-                    height: 45
-                    fillMode: Image.PreserveAspectFit
-                    source: "resources/icons/home.png"
-                }
-            }
-        }
-
-        MouseArea {
-            id: helpMouseArea
-            y: 0
+        Rectangle {
+            id: helpRect
+            x: 745
+            y: 2
             width: 45
             height: 45
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.right: parent.right
-            anchors.rightMargin: 10
-
-            Rectangle {
-                id: helpRect
-                width: 45
-                height: 45
-                gradient: Gradient {
-                    GradientStop {
-                        position: 0
-                        color: "#6476a4"
-                    }
-
-                    GradientStop {
-                        position: 1
-                        color: "#405383"
-                    }
+            gradient: Gradient {
+                GradientStop {
+                    position: 0
+                    color: "#fb8f23"
                 }
 
-                Image {
-                    id: helpImage
-                    width: 40
-                    height: 40
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    fillMode: Image.PreserveAspectFit
-                    source: "resources/icons/help3.png"
+                GradientStop {
+                    position: 1
+                    color: "#b16213"
                 }
             }
+
+            Image {
+                id: helpImage
+                width: 40
+                height: 40
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                fillMode: Image.PreserveAspectFit
+                source: "resources/icons/help3.png"
+            }
+
+            MouseArea {
+                id: helpMouseArea
+                anchors.fill: parent
+            }
         }
+
+        Rectangle {
+            id: homeRect
+            x: 691
+            y: 2
+            width: 45
+            height: 45
+            radius: 2
+            gradient: Gradient {
+                GradientStop {
+                    position: 0
+                    color: "#fb8f23"
+                }
+
+                GradientStop {
+                    position: 1
+                    color: "#b16213"
+                }
+            }
+
+            Image {
+                id: homeImage
+                x: 0
+                y: 0
+                width: 45
+                height: 45
+                fillMode: Image.PreserveAspectFit
+                source: "resources/icons/home.png"
+            }
+
+            MouseArea {
+                id: homeMouseArea
+                anchors.fill: parent
+            }
+        }
+
 
 
     }

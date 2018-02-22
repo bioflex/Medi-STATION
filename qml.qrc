@@ -24,5 +24,11 @@
         <file>PulseScreenForm.ui.qml</file>
         <file>BloodPressureScreen.qml</file>
         <file>BloodPressureScreenForm.ui.qml</file>
+        <file>NearByScreen.qml</file>
+        <file>NearByScreenForm.ui.qml</file>
+        <file>DirectoryList.qml</file>
+        <file>DirectoryListForm.ui.qml</file>
+        <file>ResultScreen.qml</file>
+        <file>ResultScreenForm.ui.qml</file>
     </qresource>
 </RCC>

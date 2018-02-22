@@ -52,7 +52,20 @@ Item {
                 id: fullServiceRect
                 width: 200
                 height: 200
-                color: "#f0f0f2"
+                radius: 3
+                border.color: "#c3cfe2"
+                border.width: 2
+                gradient: Gradient {
+                    GradientStop {
+                        position: 0
+                        color: "#f0f0f2"
+                    }
+
+                    GradientStop {
+                        position: 1
+                        color: "#c3cfe2"
+                    }
+                }
                 Layout.fillHeight: true
                 Layout.fillWidth: true
 
@@ -80,12 +93,12 @@ Item {
                 Rectangle {
                     id: fullStartRect
                     y: 229
-                    width: 230
-                    height: 70
+                    width: 150
+                    height: 50
                     color: "#ffffff"
-                    radius: 30
+                    radius: 20
                     border.color: "#0093e1"
-                    border.width: 3
+                    border.width: 2
                     anchors.horizontalCenterOffset: 0
                     anchors.horizontalCenter: parent.horizontalCenter
 
@@ -108,7 +121,20 @@ Item {
                 id: customServiceRect
                 width: 200
                 height: 200
-                color: "#f0f0f2"
+                radius: 3
+                border.width: 1
+                border.color: "#596164"
+                gradient: Gradient {
+                    GradientStop {
+                        position: 0
+                        color: "#868f96"
+                    }
+
+                    GradientStop {
+                        position: 1
+                        color: "#596164"
+                    }
+                }
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -138,11 +164,11 @@ Item {
                     id: customStartRect
                     x: -233
                     y: 229
-                    width: 230
-                    height: 70
+                    width: 150
+                    height: 50
                     color: "#ffffff"
-                    radius: 30
-                    border.width: 3
+                    radius: 20
+                    border.width: 2
                     border.color: "#0093e1"
                     Text {
                         id: text7
@@ -179,7 +205,20 @@ Item {
                         id: findHealthServicesRect
                         width: 200
                         height: 200
-                        color: "#f0f0f2"
+                        radius: 3
+                        border.width: 2
+                        border.color: "#e6dee9"
+                        gradient: Gradient {
+                            GradientStop {
+                                position: 0
+                                color: "#f0f0f2"
+                            }
+
+                            GradientStop {
+                                position: 1
+                                color: "#e6dee9"
+                            }
+                        }
                         Layout.fillHeight: true
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
@@ -197,11 +236,11 @@ Item {
                             id: findNearRect
                             x: -499
                             y: 82
-                            width: 200
-                            height: 70
+                            width: 150
+                            height: 50
                             color: "#ffffff"
-                            radius: 30
-                            border.width: 3
+                            radius: 20
+                            border.width: 2
                             border.color: "#0093e1"
                             Text {
                                 id: text8
@@ -224,7 +263,20 @@ Item {
                         id: findHealthDirectoryRect
                         width: 200
                         height: 200
-                        color: "#f0f0f2"
+                        radius: 3
+                        border.width: 2
+                        border.color: "#8dc26f"
+                        gradient: Gradient {
+                            GradientStop {
+                                position: 0
+                                color: "#76b852"
+                            }
+
+                            GradientStop {
+                                position: 1
+                                color: "#8dc26f"
+                            }
+                        }
                         Layout.fillHeight: true
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
@@ -243,12 +295,12 @@ Item {
                             id: searchDirectoryRect
                             x: 34
                             y: 71
-                            width: 200
-                            height: 70
+                            width: 150
+                            height: 50
                             color: "#ffffff"
-                            radius: 30
+                            radius: 20
                             border.color: "#0093e1"
-                            border.width: 3
+                            border.width: 2
                             Text {
                                 id: text9
                                 text: qsTr("SEARCH")

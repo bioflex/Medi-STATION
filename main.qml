@@ -11,7 +11,7 @@ ApplicationWindow {
 
     header: TopPanel
     {
-
+        homeMouseArea.onClicked: mainStack.currentIndex = 0
     }
 
     StackLayout {
