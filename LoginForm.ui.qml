@@ -5,6 +5,9 @@ import QtQuick.Layouts 1.3
 Item {
     width: 800
     height: 420
+    property alias loginRect: loginRect
+    property alias loginText: loginText
+    property alias loginBannerText: loginBannerText
     property alias keyBackMouseArea: keyBackMouseArea
     property alias keyZeroMouseArea: keyZeroMouseArea
     property alias keyNineMouseArea: keyNineMouseArea
@@ -34,7 +37,7 @@ Item {
             Layout.fillHeight: true
 
             Text {
-                id: text11
+                id: loginBannerText
                 x: 51
                 y: 28
                 color: "#ffffff"
@@ -90,21 +93,23 @@ Item {
             }
 
             Rectangle {
-                id: rectangle2
+                id: loginRect
                 x: 100
                 y: 282
                 width: 272
                 height: 53
-                color: "#b4b4b4"
+                color: "#ffffff"
                 radius: 10
+                border.color: "#0093e1"
+                border.width: 2
                 anchors.horizontalCenterOffset: 9
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 Text {
-                    id: text12
+                    id: loginText
                     x: 107
                     y: 20
-                    color: "#ffffff"
+                    color: "#0093e1"
                     text: qsTr("LOGIN")
                     font.bold: true
                     horizontalAlignment: Text.AlignHCenter
@@ -369,8 +374,8 @@ Item {
 
                     Image {
                         id: image
-                        width: 40
-                        height: 30
+                        width: 32
+                        height: 20
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         source: "resources/icons/backspace_white.png"

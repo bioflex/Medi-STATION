@@ -1,6 +1,19 @@
 import QtQuick 2.4
 
 LoginForm {
+
+    property color buttonBaseColor: "white"
+    property  color  buttonPressedColor: "#a9abad"
+
+    loginRect.color: loginMouseArea.pressed? buttonPressedColor : buttonBaseColor
+
+    FontLoader {id: rob; source: "resources/fonts/Roboto-Bold.ttf"}
+
+    loginText.font.family: rob.name
+    loginBannerText.font.family: rob.name
+    userNumberTextField.font.family: rob.name
+    userPinTextField.font.family: rob.name
+
     keyBackMouseArea.onPressed: {
         if (userNumberTextField.activeFocus && userNumberTextField.length > 0)
             userNumberTextField.remove(userNumberTextField.cursorPosition - 1, userNumberTextField.cursorPosition)
@@ -66,12 +79,6 @@ LoginForm {
             userNumberTextField.insert(userNumberTextField.cursorPosition, "1")
         else if (userPinTextField.activeFocus)
             userPinTextField.insert(userPinTextField.cursorPosition, "1")
-    }
-    loginMouseArea.onPressed: {
-    }
-    userPinTextField.onTextChanged: {
-    }
-    userNumberTextField.onTextChanged: {
     }
 
     userNumberTextField.validator: IntValidator{}

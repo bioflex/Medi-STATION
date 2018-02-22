@@ -6,11 +6,11 @@ Item {
     id: item1
     width: 800
     height: 420
+    property alias text5: text5
     property alias searchDirectoryMouseArea: searchDirectoryMouseArea
     property alias findNearMouseArea: findNearMouseArea
     property alias customStartMouseArea: customStartMouseArea
     property alias fullStartMouseArea: fullStartMouseArea
-    property alias text5: text5
 
     ColumnLayout {
         id: columnLayout
@@ -20,7 +20,7 @@ Item {
         Rectangle {
             id: serviceHeaderRect
             height: 100
-            color: "#f0f0f2"
+            color: "#d2d3d1"
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             anchors.left: parent.left
             anchors.leftMargin: 0
@@ -33,10 +33,12 @@ Item {
                 id: serviceHeaderText
                 x: 0
                 y: 406
+                color: "#0093e1"
                 text: qsTr("PLEASE SELECT FROM THE AVAILABLE SERVICES TO CONTINUE")
+                font.bold: true
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 12
+                font.pixelSize: 16
             }
         }
 
@@ -46,32 +48,23 @@ Item {
             height: 320
             Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
             Layout.fillHeight: true
-            spacing: 0
+            spacing: 2
 
             Rectangle {
                 id: fullServiceRect
                 width: 200
                 height: 200
-                radius: 3
+                color: "#ff8f2a"
+                radius: 1
                 border.color: "#c3cfe2"
                 border.width: 2
-                gradient: Gradient {
-                    GradientStop {
-                        position: 0
-                        color: "#f0f0f2"
-                    }
-
-                    GradientStop {
-                        position: 1
-                        color: "#c3cfe2"
-                    }
-                }
                 Layout.fillHeight: true
                 Layout.fillWidth: true
 
                 Text {
                     id: text2
                     y: 26
+                    color: "#0093e1"
                     text: qsTr("FULL SCREENING")
                     horizontalAlignment: Text.AlignHCenter
                     anchors.horizontalCenterOffset: 0
@@ -93,7 +86,7 @@ Item {
                 Rectangle {
                     id: fullStartRect
                     y: 229
-                    width: 150
+                    width: 250
                     height: 50
                     color: "#ffffff"
                     radius: 20
@@ -104,6 +97,7 @@ Item {
 
                     Text {
                         id: text6
+                        color: "#0093e1"
                         text: qsTr("START")
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
@@ -112,6 +106,7 @@ Item {
 
                     MouseArea {
                         id: fullStartMouseArea
+                        width: 150
                         anchors.fill: parent
                     }
                 }
@@ -121,20 +116,10 @@ Item {
                 id: customServiceRect
                 width: 200
                 height: 200
+                color: "#76b852"
                 radius: 3
                 border.width: 1
                 border.color: "#596164"
-                gradient: Gradient {
-                    GradientStop {
-                        position: 0
-                        color: "#868f96"
-                    }
-
-                    GradientStop {
-                        position: 1
-                        color: "#596164"
-                    }
-                }
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -142,6 +127,7 @@ Item {
                 Text {
                     id: text3
                     y: 29
+                    color: "#0093e1"
                     text: qsTr("CUSTOM SCREENING")
                     horizontalAlignment: Text.AlignHCenter
                     anchors.horizontalCenterOffset: 0
@@ -164,7 +150,7 @@ Item {
                     id: customStartRect
                     x: -233
                     y: 229
-                    width: 150
+                    width: 250
                     height: 50
                     color: "#ffffff"
                     radius: 20
@@ -172,6 +158,7 @@ Item {
                     border.color: "#0093e1"
                     Text {
                         id: text7
+                        color: "#0093e1"
                         text: qsTr("START")
                         font.pixelSize: 12
                         anchors.horizontalCenter: parent.horizontalCenter
@@ -198,27 +185,17 @@ Item {
 
                 ColumnLayout {
                     id: otherServicesColumnLayout
-                    spacing: 0
+                    spacing: 2
                     anchors.fill: parent
 
                     Rectangle {
                         id: findHealthServicesRect
                         width: 200
                         height: 200
+                        color: "#78c0a8"
                         radius: 3
                         border.width: 2
                         border.color: "#e6dee9"
-                        gradient: Gradient {
-                            GradientStop {
-                                position: 0
-                                color: "#f0f0f2"
-                            }
-
-                            GradientStop {
-                                position: 1
-                                color: "#e6dee9"
-                            }
-                        }
                         Layout.fillHeight: true
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
@@ -226,6 +203,7 @@ Item {
                         Text {
                             id: text4
                             y: 18
+                            color: "#0093e1"
                             text: qsTr("FIND NEAR-BY HEALTH FACILITIES")
                             anchors.horizontalCenterOffset: 0
                             anchors.horizontalCenter: parent.horizontalCenter
@@ -244,6 +222,7 @@ Item {
                             border.color: "#0093e1"
                             Text {
                                 id: text8
+                                color: "#0093e1"
                                 text: qsTr("FIND")
                                 font.pixelSize: 12
                                 anchors.horizontalCenter: parent.horizontalCenter
@@ -263,20 +242,10 @@ Item {
                         id: findHealthDirectoryRect
                         width: 200
                         height: 200
+                        color: "#fcebb6"
                         radius: 3
                         border.width: 2
                         border.color: "#8dc26f"
-                        gradient: Gradient {
-                            GradientStop {
-                                position: 0
-                                color: "#76b852"
-                            }
-
-                            GradientStop {
-                                position: 1
-                                color: "#8dc26f"
-                            }
-                        }
                         Layout.fillHeight: true
                         Layout.fillWidth: true
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
@@ -284,6 +253,7 @@ Item {
                         Text {
                             id: text5
                             y: 34
+                            color: "#0093e1"
                             text: qsTr("HEALTH SERVICES DIRECTORY")
                             anchors.horizontalCenterOffset: 0
                             anchors.horizontalCenter: parent.horizontalCenter
@@ -303,6 +273,7 @@ Item {
                             border.width: 2
                             Text {
                                 id: text9
+                                color: "#0093e1"
                                 text: qsTr("SEARCH")
                                 font.pixelSize: 12
                                 anchors.horizontalCenter: parent.horizontalCenter

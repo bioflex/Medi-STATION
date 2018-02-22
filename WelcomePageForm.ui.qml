@@ -5,6 +5,14 @@ import QtQuick.Controls 2.2
 Item {
     width: 800
     height: 420
+    property alias guestLTextArea: guestLTextArea
+    property alias nhisLTextArea: nhisLTextArea
+    property alias userLTextArea: userLTextArea
+    property alias guestText: guestText
+    property alias nhisLText: nhisLText
+    property alias userLText: userLText
+    property alias wAcessText: wAcessText
+    property alias wWelcomeText: wWelcomeText
     property alias userLoginMouseArea: userLoginMouseArea
     property alias guestRect: guestRect
     property alias guestMouseArea: guestMouseArea
@@ -69,26 +77,29 @@ Item {
                 Rectangle {
                     id: userLoginRect
                     width: 300
-                    height: 70
+                    height: 80
                     color: "#ffffff"
                     radius: 20
+                    border.color: "#0093e1"
+                    border.width: 2
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
                     Text {
                         id: userLText
                         x: 118
                         y: 8
+                        color: "#0093e1"
                         text: qsTr("User Login")
                         font.bold: true
                         font.pixelSize: 12
                     }
 
                     TextArea {
-                        id: textArea
+                        id: userLTextArea
                         x: 8
                         y: 22
                         width: 279
-                        height: 40
+                        height: 58
                         color: "#767676"
                         text: qsTr("Select this option if you already have an account . You can create a new account using our free comparion mobile app.")
                         font.pointSize: 8
@@ -104,27 +115,31 @@ Item {
 
                 Rectangle {
                     id: nhisLoginRect
+                    y: 205
                     width: 300
-                    height: 70
+                    height: 80
                     color: "#ffffff"
                     radius: 20
+                    border.color: "#0093e1"
+                    border.width: 2
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
                     Text {
                         id: nhisLText
                         x: 115
                         y: 6
+                        color: "#0093e1"
                         text: qsTr("NHIS Login")
                         font.bold: true
                         font.pixelSize: 12
                     }
 
                     TextArea {
-                        id: textArea2
+                        id: nhisLTextArea
                         x: 18
                         y: 26
                         width: 264
-                        height: 36
+                        height: 44
                         color: "#626262"
                         text: qsTr("Select this option to access the system with a valid NHIS Card")
                         wrapMode: Text.WordWrap
@@ -142,16 +157,20 @@ Item {
 
                 Rectangle {
                     id: guestRect
+                    y: 320
                     width: 300
-                    height: 70
+                    height: 80
                     color: "#ffffff"
                     radius: 20
+                    border.width: 2
+                    border.color: "#0093e1"
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
                     Text {
                         id: guestText
                         x: 114
                         y: 10
+                        color: "#0093e1"
                         text: qsTr("Guest Login")
                         font.bold: true
                         horizontalAlignment: Text.AlignLeft
@@ -159,7 +178,7 @@ Item {
                     }
 
                     TextArea {
-                        id: textArea1
+                        id: guestLTextArea
                         x: 9
                         y: 23
                         width: 284

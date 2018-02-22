@@ -50,5 +50,18 @@
         <file>resources/fonts/Roboto-ThinItalic.ttf</file>
         <file>resources/fonts/HELR45W.ttf</file>
         <file>resources/fonts/Helvetica Black.ttf</file>
+        <file>resources/fonts/aleo-bolditalic-webfont.ttf</file>
+        <file>resources/fonts/aleo-bold-webfont.ttf</file>
+        <file>resources/fonts/aleo-italic-webfont.ttf</file>
+        <file>resources/fonts/aleo-lightitalic-webfont.ttf</file>
+        <file>resources/fonts/aleo-light-webfont.ttf</file>
+        <file>resources/fonts/aleo-regular-webfont.ttf</file>
+        <file>resources/fonts/ClearSans-BoldItalic.ttf</file>
+        <file>resources/fonts/ClearSans-Italic.ttf</file>
+        <file>resources/fonts/ClearSans-Light.ttf</file>
+        <file>resources/fonts/ClearSans-Medium.ttf</file>
+        <file>resources/fonts/ClearSans-MediumItalic.ttf</file>
+        <file>resources/fonts/ClearSans-Regular.ttf</file>
+        <file>resources/fonts/ClearSans-Thin.ttf</file>
     </qresource>
 </RCC>
