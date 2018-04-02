@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 
 ApplicationWindow {
     visible: true
+    objectName: "appWindow"
     width: 800
     height: 480
     title: qsTr("Medi-STATION")
