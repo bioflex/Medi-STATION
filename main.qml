@@ -10,62 +10,78 @@ ApplicationWindow {
     height: 480
     title: qsTr("Medi-STATION")
 
-    header: TopPanel
+    // SLOT for Changeing Date and Time
+    function setDate(text)
     {
-        homeMouseArea.onClicked: mainStack.currentIndex = 0
-        helpMouseArea.onClicked: screenMainId.detailStackLayout.currentIndex = 0
+        topPanel.dateTimeText.text = text
     }
 
-    StackLayout {
+    header: TopPanel
+    {
+        id: topPanel
+        objectName: "headerPanel"
+
+        //homeMouseArea.onClicked: mainStack.currentIndex = 0
+        //helpMouseArea.onClicked: screenMainId.detailStackLayout.currentIndex = 0
+    }
+
+    StackLayout
+    {
         id: mainStack
+        objectName: "mainStack"
         anchors.fill: parent
 
         WelcomePage
         {
             id: welcomeId
-            userLoginMouseArea.onClicked: mainStack.currentIndex = 1
-            guestMouseArea.onClicked: mainStack.currentIndex = 2
+            objectName: "welcomePage"
+            //userLoginMouseArea.onClicked: mainStack.currentIndex = 1
+            //guestMouseArea.onClicked: mainStack.currentIndex = 2
         }
 
         Login
         {
             id: loginId
-            loginMouseArea.onClicked: mainStack.currentIndex = 2
+            objectName: "loginPage"
+            //loginMouseArea.onClicked: mainStack.currentIndex = 2
         }
 
         ServiceOption
         {
             id: serviceId
-            fullServiceMouseArea.onClicked: mainStack.currentIndex = 4
-            customServiceMouseArea.onClicked: mainStack.currentIndex = 3
+            objectName: "serviceOptionPage"
+            //fullServiceMouseArea.onClicked: mainStack.currentIndex = 4
+            //customServiceMouseArea.onClicked: mainStack.currentIndex = 3
         }
 
         CustomService
         {
             id: customServiceId
-            weightSelectMouseArea.onClicked: {mainStack.currentIndex =  4; screenMainId.detailStackLayout.currentIndex = 0}
-            heightSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 1}
-            tempSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 2}
-            pulseSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 3}
-            bpSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 4}
+            objectName: "customeServicePage"
+            //weightSelectMouseArea.onClicked: {mainStack.currentIndex =  4; screenMainId.detailStackLayout.currentIndex = 0}
+            //heightSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 1}
+            //tempSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 2}
+            //pulseSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 3}
+            //bpSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 4}
 
         }
 
         ScreeningMain
         {
             id: screenMainId
-
+            objectName: "screeningMainPage"
             //detailStackLayout.currentIndex: 0s
-            weightScreen.weightContinueMouseArea.onClicked: detailStackLayout.currentIndex++
-            heightScreen.heightContinueMouseArea.onClicked: detailStackLayout.currentIndex++
-            temperatureScreen.tempContinueMouseArea.onClicked: detailStackLayout.currentIndex++
-            pulseScreen.pulseContinueMouseArea.onClicked: detailStackLayout.currentIndex++
-            bloodPressureScreen.bloodPreMouseArea.onClicked: mainStack.currentIndex = 5
+            //weightScreen.weightContinueMouseArea.onClicked: detailStackLayout.currentIndex++
+            //heightScreen.heightContinueMouseArea.onClicked: detailStackLayout.currentIndex++
+            //temperatureScreen.tempContinueMouseArea.onClicked: detailStackLayout.currentIndex++
+            //pulseScreen.pulseContinueMouseArea.onClicked: detailStackLayout.currentIndex++
+            //bloodPressureScreen.bloodPreMouseArea.onClicked: mainStack.currentIndex = 5
         }
 
         ResultScreen
         {
             id: resultId
+            objectName: "resultPage"
         }
 
     }
