@@ -33,11 +33,25 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
 
+
             Image {
                 id: wLeftImage
+                opacity: 0.7
                 fillMode: Image.PreserveAspectCrop
                 anchors.fill: parent
                 source: "resources/images/mainbackhigh.jpg"
+            }
+
+            Image {
+                id: image
+                x: 38
+                y: 114
+                width: 324
+                height: 192
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+                opacity: 1
+                source: "resources/icons/Medi-Station-logo.png"
             }
         }
 
@@ -45,7 +59,7 @@ Item {
             id: wRightRect
             width: 200
             height: 200
-            color: "#d2d3d1"
+            color: "#615f64"
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -57,7 +71,7 @@ Item {
 
                 Text {
                     id: wWelcomeText
-                    color: "#208dfa"
+                    color: "#ffffff"
                     text: qsTr("Welcome To Your Medi-STATION")
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     font.bold: true
@@ -68,6 +82,7 @@ Item {
 
                 Text {
                     id: wAcessText
+                    color: "#ffffff"
                     text: qsTr("How will you like to access our services?")
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     font.bold: true

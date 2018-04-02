@@ -63,5 +63,10 @@
         <file>resources/fonts/ClearSans-MediumItalic.ttf</file>
         <file>resources/fonts/ClearSans-Regular.ttf</file>
         <file>resources/fonts/ClearSans-Thin.ttf</file>
+        <file>resources/icons/search.png</file>
+        <file>resources/icons/directory.png</file>
+        <file>resources/icons/location.png</file>
+        <file>resources/icons/full.png</file>
+        <file>resources/icons/custom-list.png</file>
     </qresource>
 </RCC>

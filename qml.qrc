@@ -30,5 +30,7 @@
         <file>DirectoryListForm.ui.qml</file>
         <file>ResultScreen.qml</file>
         <file>ResultScreenForm.ui.qml</file>
+        <file>CustomService.qml</file>
+        <file>CustomServiceForm.ui.qml</file>
     </qresource>
 </RCC>

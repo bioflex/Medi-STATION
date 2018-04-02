@@ -9,8 +9,8 @@ WelcomePageForm
     FontLoader {id: rob; source: "resources/fonts/Roboto-Bold.ttf"}
 
     wWelcomeText.font.family: aleo.name
-
     wAcessText.font.family: rob.name
+
     userLText.font.family: rob.name
     userLTextArea.font.family: rob.name
 

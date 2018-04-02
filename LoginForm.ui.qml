@@ -5,6 +5,17 @@ import QtQuick.Layouts 1.3
 Item {
     width: 800
     height: 420
+    property alias keyBackRect: keyBackRect
+    property alias keyZeroRect: keyZeroRect
+    property alias keyNineRect: keyNineRect
+    property alias keyEightRect: keyEightRect
+    property alias keySevenRect: keySevenRect
+    property alias keySixRect: keySixRect
+    property alias keyFiveRect: keyFiveRect
+    property alias keyFourRect: keyFourRect
+    property alias keyThreeRect: keyThreeRect
+    property alias keyTwoRect: keyTwoRect
+    property alias keyOneRect: keyOneRect
     property alias loginRect: loginRect
     property alias loginText: loginText
     property alias loginBannerText: loginBannerText

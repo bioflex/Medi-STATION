@@ -4,8 +4,21 @@ LoginForm {
 
     property color buttonBaseColor: "white"
     property  color  buttonPressedColor: "#a9abad"
+    property color keyBaseColor: "#b4b4b4"
+    property color keyPressedColor: "#615f64"
 
     loginRect.color: loginMouseArea.pressed? buttonPressedColor : buttonBaseColor
+    keyOneRect.color: keyOneMouseArea.pressed? keyPressedColor : keyBaseColor
+    keyTwoRect.color: keyTwoMouseArea.pressed? keyPressedColor : keyBaseColor
+    keyThreeRect.color: keyThreeMouseArea.pressed? keyPressedColor : keyBaseColor
+    keyFourRect.color: keyFourMouseArea.pressed? keyPressedColor : keyBaseColor
+    keyFiveRect.color: keyFiveMouseArea.pressed? keyPressedColor : keyBaseColor
+    keySixRect.color: keySixMouseArea.pressed? keyPressedColor : keyBaseColor
+    keySevenRect.color: keySevenMouseArea.pressed? keyPressedColor : keyBaseColor
+    keyEightRect.color: keyEightMouseArea.pressed? keyPressedColor : keyBaseColor
+    keyNineRect.color: keyNineMouseArea.pressed? keyPressedColor : keyBaseColor
+    keyZeroRect.color: keyZeroMouseArea.pressed? keyPressedColor : keyBaseColor
+    keyBackRect.color: keyBackMouseArea.pressed? keyPressedColor : keyBaseColor
 
     FontLoader {id: rob; source: "resources/fonts/Roboto-Bold.ttf"}
 

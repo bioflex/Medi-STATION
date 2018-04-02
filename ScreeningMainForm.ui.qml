@@ -6,6 +6,10 @@ Item {
     id: item1
     width: 800
     height: 420
+    property alias bloodPressureScreen: bloodPressureScreen
+    property alias pulseScreen: pulseScreen
+    property alias temperatureScreen: temperatureScreen
+    property alias heightScreen: heightScreen
     property alias weightScreen: weightScreen
     property alias bpRect: bpRect
     property alias pulseRect: pulseRect
@@ -33,7 +37,7 @@ Item {
 
             Rectangle {
                 id: weightRect
-                y: 80
+                y: 100
                 width: 180
                 height: 60
                 color: "#22272a"
@@ -51,7 +55,7 @@ Item {
             Rectangle {
                 id: heightRect
                 x: 0
-                y: 140
+                y: 160
                 width: 180
                 height: 60
                 color: "#22272a"
@@ -69,7 +73,7 @@ Item {
             Rectangle {
                 id: tempRect
                 x: 0
-                y: 200
+                y: 220
                 width: 180
                 height: 60
                 color: "#22272a"
@@ -87,7 +91,7 @@ Item {
             Rectangle {
                 id: pulseRect
                 x: 0
-                y: 260
+                y: 280
                 width: 180
                 height: 60
                 color: "#22272a"
@@ -105,7 +109,7 @@ Item {
             Rectangle {
                 id: bpRect
                 x: 0
-                y: 320
+                y: 340
                 width: 180
                 height: 60
                 color: "#22272a"
@@ -140,16 +144,28 @@ Item {
                 HeightScreen {
                     id: heightScreen
                 }
+
+                TemperatureScreen {
+                    id: temperatureScreen
+                }
+
+                PulseScreen {
+                    id: pulseScreen
+                }
+
+                BloodPressureScreen {
+                    id: bloodPressureScreen
+                }
             }
         }
     }
 
     Image {
         id: image
-        x: 15
-        y: 10
-        width: 150
-        height: 60
+        x: 8
+        y: 20
+        width: 159
+        height: 69
         fillMode: Image.PreserveAspectFit
         source: "resources/icons/Medi-Station-logo.png"
     }
