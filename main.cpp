@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
 
     // Step 1: get access to the root object
     QObject *rootObject = engine.rootObjects().first();
-    QObject *qmlHeaderObject = rootObject->findChild<QObject*>("headerPanel");
-    QObject *dateTimeObject = qmlHeaderObject->findChild<QObject*>("dateTimeText");
+    //QObject *qmlHeaderObject = rootObject->findChild<QObject*>("headerPanel");
+    //QObject *dateTimeObject = qmlHeaderObject->findChild<QObject*>("dateTimeText");
 
     // Get Curent Date and Time
     //QDateTime *date = new QDateTime(QDateTime::currentDateTime());
