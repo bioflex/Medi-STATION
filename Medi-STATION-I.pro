@@ -25,9 +25,9 @@ QML_IMPORT_PATH =
 QML_DESIGNER_IMPORT_PATH =
 
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+INSTALLS    = target
+target.files = widgettest
+target.path = /home/pi
 
 HEADERS += \
     datetimer.h

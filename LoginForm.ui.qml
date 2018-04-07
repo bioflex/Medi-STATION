@@ -74,23 +74,22 @@ Item {
 
                 TextField {
                     id: userNumberTextField
+                    y: 33
                     width: 184
                     height: 40
                     text: qsTr("")
-                    anchors.verticalCenterOffset: -34
                     anchors.horizontalCenterOffset: 0
                     font.bold: true
                     horizontalAlignment: Text.AlignHCenter
                     font.pointSize: 15
                     placeholderText: "PHONE NUMBER"
                     anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.verticalCenter: parent.verticalCenter
                 }
 
                 TextField {
                     id: userPinTextField
                     x: 44
-                    y: 99
+                    y: 95
                     width: 184
                     height: 40
                     text: qsTr("")

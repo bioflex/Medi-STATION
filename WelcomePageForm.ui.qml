@@ -33,7 +33,6 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
 
-
             Image {
                 id: wLeftImage
                 opacity: 0.7
@@ -63,11 +62,9 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
 
-
             ColumnLayout {
                 id: columnLayout
                 anchors.fill: parent
-
 
                 Text {
                     id: wWelcomeText
@@ -78,7 +75,6 @@ Item {
                     font.family: "Tahoma"
                     font.pixelSize: 20
                 }
-
 
                 Text {
                     id: wAcessText
@@ -157,6 +153,7 @@ Item {
                         height: 44
                         color: "#626262"
                         text: qsTr("Select this option to access the system with a valid NHIS Card")
+                        font.pointSize: 8
                         wrapMode: Text.WordWrap
                     }
 
@@ -166,9 +163,6 @@ Item {
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     }
                 }
-
-
-
 
                 Rectangle {
                     id: guestRect
@@ -200,6 +194,7 @@ Item {
                         height: 39
                         color: "#7c7c7c"
                         text: qsTr("Select this option to use the system as a guest.        NB: You will not be able to store screening results")
+                        font.pointSize: 8
                         horizontalAlignment: Text.AlignHCenter
                         wrapMode: Text.WordWrap
                     }
@@ -210,17 +205,7 @@ Item {
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     }
                 }
-
-
-
-
-
-
-
-
-
             }
-
         }
     }
 }

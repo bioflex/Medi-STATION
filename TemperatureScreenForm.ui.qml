@@ -26,7 +26,7 @@ Item {
                 width: 579
                 height: 32
                 color: "#208dfa"
-                text: qsTr("PLEASE STAND INTHE TEPRATURE MARKER AND FACE THE TEMPERATURE GUN")
+                text: qsTr("PLEASE STAND IN THE MARKER AND FACE THE TEMPERATURE SENSOR")
                 anchors.horizontalCenterOffset: 1
                 font.bold: true
                 horizontalAlignment: Text.AlignHCenter
@@ -38,7 +38,8 @@ Item {
             Text {
                 id: text8
                 y: 40
-                text: qsTr("Text")
+                text: qsTr("NB: For accurate temperature measurement ensure that you are well rested")
+                font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenterOffset: 1
@@ -163,9 +164,15 @@ Item {
                 Text {
                     id: text5
                     x: 85
-                    y: 43
+                    y: 8
+                    width: 245
+                    height: 128
                     color: "#ffffff"
-                    text: qsTr("Do something")
+                    text: qsTr("Please press the start button to begin taking temperature reading. <br>The red led turns green when complete<br> <br>Press the continue button after reading is done to proceed")
+                    font.bold: true
+                    wrapMode: Text.WordWrap
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignLeft
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.pixelSize: 12
                 }

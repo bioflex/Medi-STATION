@@ -25,7 +25,7 @@ Item {
                 id: text1
                 y: 10
                 color: "#208dfa"
-                text: qsTr("PLEASE CUF THE BLOOD PRESSURE MONITOR TO YOUR ARM AS SHOWN")
+                text: qsTr("PLEASE FIRMLY CUF THE BLOOD PRESSURE MONITOR TO YOUR ARM")
                 anchors.horizontalCenterOffset: 0
                 font.bold: true
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -36,7 +36,8 @@ Item {
                 id: text2
                 x: 293
                 y: 40
-                text: qsTr("Text")
+                text: qsTr("NB: for accurate blood pressure reading ensure you are in a relaxed position")
+                font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenterOffset: 1
@@ -162,8 +163,12 @@ Item {
                 Text {
                     id: text7
                     y: 13
+                    width: 243
+                    height: 126
                     color: "#ffffff"
-                    text: qsTr("Text")
+                    text: qsTr("Press the start button to begin blood pressure reading.<br> The red led turns green when done.<br> <br>Press the continue button when reading is done to proceed")
+                    verticalAlignment: Text.AlignVCenter
+                    wrapMode: Text.WordWrap
                     font.bold: true
                     anchors.horizontalCenterOffset: 1
                     anchors.horizontalCenter: parent.horizontalCenter

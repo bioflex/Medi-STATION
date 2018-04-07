@@ -52,6 +52,8 @@ ApplicationWindow {
             objectName: "serviceOptionPage"
             fullServiceMouseArea.onClicked: mainStack.currentIndex = 4
             customServiceMouseArea.onClicked: mainStack.currentIndex = 3
+            findHealthMouseArea.onClicked: mainStack.currentIndex = 6
+            findDirectoryMouseArea.onClicked: mainStack.currentIndex = 7;
         }
 
         CustomService
@@ -81,6 +83,16 @@ ApplicationWindow {
         {
             id: resultId
             objectName: "resultPage"
+        }
+
+        NearByScreen
+        {
+            id: nearbyId
+        }
+
+        DirectoryList
+        {
+            id: directoryId
         }
 
     }

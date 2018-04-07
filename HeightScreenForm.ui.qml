@@ -164,11 +164,12 @@ Item {
                 Text {
                     id: text6
                     x: 8
-                    y: 8
+                    y: 31
                     width: 244
                     height: 67
                     color: "#ffffff"
-                    text: qsTr("Press the start button and stand on the Weight-Pad to take weight measurement. <br>The Reading led turns Green when complete")
+                    text: "Press the start button and  stand in the area marked as height to take measurement. <br>The Reading led turns Green when complete<br> <br> Press the continue button after reading is complete to proceed"
+                    font.bold: true
                     wrapMode: Text.WordWrap
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: 12

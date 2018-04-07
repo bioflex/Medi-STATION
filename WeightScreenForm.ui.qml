@@ -35,7 +35,7 @@ Item {
             Text {
                 id: text8
                 y: 40
-                text: qsTr("NB: For accurate weight measurement, ensure that you are not carrying and additional weight")
+                text: qsTr("NB: For accurate weight measurement, ensure that you are not carrying any additional weight")
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -102,7 +102,7 @@ Item {
                     Text {
                         id: text3
                         color: "#ffffff"
-                        text: qsTr("2.5")
+                        text: qsTr("74.2")
                         font.bold: true
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter
@@ -168,9 +168,9 @@ Item {
                     x: 8
                     y: 16
                     width: 243
-                    height: 80
+                    height: 100
                     color: "#ffffff"
-                    text: qsTr("Press the start button and stand on the Weight-Pad to take weight measurement. <br>The Red  led turns Green when complete")
+                    text: "Press the start button and stand on the Weight-Pad to take weight measurement. <br>The Red  led turns Green when complete <br> <br>Press the continue button after reading is complete to proceed"
                     horizontalAlignment: Text.AlignLeft
                     font.bold: true
                     wrapMode: Text.WordWrap

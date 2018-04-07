@@ -34,7 +34,8 @@ Item {
             Text {
                 id: text2
                 y: 40
-                text: qsTr("Text")
+                text: qsTr("NB: For accurate pulse reading ensure you are relaxed and well rested")
+                font.bold: true
                 anchors.horizontalCenterOffset: 1
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: 12
@@ -163,10 +164,11 @@ Item {
                 Text {
                     id: text7
                     y: 8
-                    width: 165
-                    height: 51
+                    width: 243
+                    height: 120
                     color: "#ffffff"
-                    text: qsTr("Text")
+                    text: qsTr("Please press the start button to start pulse reading<br>The red led turns green when complete<br><br>Press the continue button after reading is complete to proceed")
+                    font.bold: true
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignVCenter
                     anchors.horizontalCenterOffset: 1

@@ -23,7 +23,7 @@ Item {
                 id: text1
                 y: 10
                 color: "#208dfa"
-                text: qsTr("SCREENING RESULTS")
+                text: qsTr("THANK YOU FOR USING OUR SERVICES")
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -33,10 +33,10 @@ Item {
             Text {
                 id: text2
                 y: 40
-                text: qsTr("THANK YOU FOR USING OUR SERVICES")
+                text: qsTr("SCREENING RESULTS")
                 font.bold: true
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 12
+                font.pixelSize: 15
             }
         }
 
@@ -415,6 +415,85 @@ Item {
                         font.bold: true
                     }
                     border.color: "#ffffff"
+                }
+            }
+
+            Rectangle {
+                id: rectangle14
+                x: 640
+                y: 10
+                width: 149
+                height: 165
+                radius: 10
+                gradient: Gradient {
+                    GradientStop {
+                        position: 0
+                        color: "#243949"
+                    }
+
+                    GradientStop {
+                        position: 1
+                        color: "#517fa4"
+                    }
+                }
+
+                MouseArea {
+                    id: mouseArea
+                    anchors.fill: parent
+                }
+
+                Text {
+                    id: text15
+                    width: 123
+                    height: 89
+                    color: "#ffffff"
+                    text: qsTr("Return to Home Screen <br>(Save results and Logout)")
+                    font.bold: true
+                    wrapMode: Text.WordWrap
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    font.pixelSize: 14
+                }
+            }
+
+            Rectangle {
+                id: rectangle15
+                x: 640
+                y: 185
+                width: 149
+                height: 165
+                radius: 10
+                gradient: Gradient {
+                    GradientStop {
+                        position: 0
+                        color: "#e6b980"
+                    }
+
+                    GradientStop {
+                        position: 1
+                        color: "#eacda3"
+                    }
+                }
+                MouseArea {
+                    id: mouseArea1
+                    anchors.fill: parent
+                }
+
+                Text {
+                    id: text16
+                    width: 122
+                    height: 57
+                    color: "#ffffff"
+                    text: qsTr("Return to Home Screen")
+                    wrapMode: Text.WordWrap
+                    font.bold: true
+                    font.pixelSize: 14
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    verticalAlignment: Text.AlignVCenter
+                    anchors.horizontalCenter: parent.horizontalCenter
                 }
             }
         }
