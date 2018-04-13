@@ -16,6 +16,15 @@ ApplicationWindow {
         topPanel.dateTimeText.text = text
     }
 
+    // SIGNAL for Staring Pulse Sensor
+    signal startPulseSensor()
+
+    // SLOT for Changing Pulse Value
+    function setPulseValue(text)
+    {
+        screenMainId.pulseScreen.pulseValueText.text = text
+    }
+
     header: TopPanel
     {
         id: topPanel
@@ -23,6 +32,7 @@ ApplicationWindow {
 
         homeMouseArea.onClicked: mainStack.currentIndex = 0
         helpMouseArea.onClicked: screenMainId.detailStackLayout.currentIndex = 0
+        quitMouseArea.onClicked: Qt.quit()
     }
 
     StackLayout
@@ -77,6 +87,8 @@ ApplicationWindow {
             temperatureScreen.tempContinueMouseArea.onClicked: detailStackLayout.currentIndex++
             pulseScreen.pulseContinueMouseArea.onClicked: detailStackLayout.currentIndex++
             bloodPressureScreen.bloodPreMouseArea.onClicked: mainStack.currentIndex = 5
+
+            pulseScreen.pulseStartMouseArea.onClicked: {startPulseSensor()}
         }
 
         ResultScreen

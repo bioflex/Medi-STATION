@@ -68,5 +68,6 @@
         <file>resources/icons/location.png</file>
         <file>resources/icons/full.png</file>
         <file>resources/icons/custom-list.png</file>
+        <file>resources/icons/close-window.png</file>
     </qresource>
 </RCC>

@@ -3,6 +3,8 @@
 #include <QDebug>
 
 #include "datetimer.h"
+#include "pulsesensor.h"
+
 
 
 int main(int argc, char *argv[])
@@ -25,6 +27,11 @@ int main(int argc, char *argv[])
     //qDebug() << date->toString();
     DateTimer currentDateTime;
     QObject::connect(&currentDateTime, SIGNAL(DateTimeString(QVariant)), rootObject, SLOT(setDate(QVariant)));
+
+    PulseSensor pulseSensor;
+    pulseSensor.Initialize();
+    QObject::connect(rootObject, SIGNAL(startPulseSensor()), &pulseSensor, SLOT(StartPulseReading()));
+    QObject::connect(&pulseSensor, SIGNAL(FinishedPulseReading(QVariant)), rootObject, SLOT(setPulseValue(QVariant)));
 
     return app.exec();
 }

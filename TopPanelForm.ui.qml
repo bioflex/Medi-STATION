@@ -5,6 +5,7 @@ import QtQuick.Controls 2.2
 Item {
     width: 800
     height: 50
+    property alias quitMouseArea: quitMouseArea
     property alias statusText: statusText
     property alias helpMouseArea: helpMouseArea
     property alias image: image
@@ -175,7 +176,38 @@ Item {
             }
         }
 
+        Rectangle {
+            id: quitRect
+            x: 635
+            y: 2
+            width: 45
+            height: 45
+            radius: 2
+            gradient: Gradient {
+                GradientStop {
+                    position: 0
+                    color: "#fb8f23"
+                }
 
+                GradientStop {
+                    position: 1
+                    color: "#b16213"
+                }
+            }
+            Image {
+                id: quitImage
+                x: 0
+                y: 0
+                width: 45
+                height: 45
+                fillMode: Image.PreserveAspectFit
+                source: "resources/icons/close-window.png"
+            }
 
+            MouseArea {
+                id: quitMouseArea
+                anchors.fill: parent
+            }
+        }
     }
 }

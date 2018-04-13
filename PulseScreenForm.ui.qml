@@ -5,6 +5,8 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias pulseValueText: pulseValueText
+    property alias pulseStartMouseArea: pulseStartMouseArea
     property alias pulseContinueMouseArea: pulseContinueMouseArea
 
     ColumnLayout {
@@ -111,7 +113,7 @@ Item {
                     border.width: 2
 
                     Text {
-                        id: text5
+                        id: pulseValueText
                         x: 230
                         y: -232
                         color: "#ffffff"
@@ -178,7 +180,7 @@ Item {
                 }
 
                 Rectangle {
-                    id: rectangle7
+                    id: pulseStartReect
                     x: 21
                     y: 150
                     width: 244
@@ -198,6 +200,11 @@ Item {
                         verticalAlignment: Text.AlignVCenter
                         font.pixelSize: 12
                     }
+
+                    MouseArea {
+                        id: pulseStartMouseArea
+                        anchors.fill: parent
+                    }
                 }
             }
 
@@ -212,11 +219,6 @@ Item {
                 border.color: "#208dfa"
                 border.width: 2
 
-                MouseArea {
-                    id: pulseContinueMouseArea
-                    anchors.fill: parent
-                }
-
                 Text {
                     id: text4
                     text: qsTr("CONTINUE")
@@ -224,6 +226,10 @@ Item {
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.pixelSize: 12
+                }
+                MouseArea {
+                    id: pulseContinueMouseArea
+                    anchors.fill: parent
                 }
             }
         }
