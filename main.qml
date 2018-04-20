@@ -16,14 +16,13 @@ ApplicationWindow {
         topPanel.dateTimeText.text = text
     }
 
-    // SIGNAL for Staring Pulse Sensor
-    signal startPulseSensor()
+    // SIGNALS
+    signal startPulseSensor()           // start pulse sensor
+    signal startHeightSensor()          // start height sensor
 
-    // SLOT for Changing Pulse Value
-    function setPulseValue(text)
-    {
-        screenMainId.pulseScreen.pulseValueText.text = text
-    }
+    // SLOTS
+    function setPulseValue(text) {screenMainId.pulseScreen.pulseValueText.text = text}      // Change pulse value
+    function setHeightValue(text) {screenMainId.heightScreen.heightValueText.text = text}   // Change height value
 
     header: TopPanel
     {
@@ -89,6 +88,7 @@ ApplicationWindow {
             bloodPressureScreen.bloodPreMouseArea.onClicked: mainStack.currentIndex = 5
 
             pulseScreen.pulseStartMouseArea.onClicked: {startPulseSensor()}
+            heightScreen.heightStartMouseArea.onClicked: {startHeightSensor()}
         }
 
         ResultScreen

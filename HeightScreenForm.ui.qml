@@ -5,6 +5,8 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias heightValueText: heightValueText
+    property alias heightStartMouseArea: heightStartMouseArea
     property alias heightContinueMouseArea: heightContinueMouseArea
 
     ColumnLayout {
@@ -115,7 +117,7 @@ Item {
                     border.color: "#ffffff"
 
                     Text {
-                        id: text5
+                        id: heightValueText
                         color: "#ffffff"
                         text: qsTr("170.2")
                         verticalAlignment: Text.AlignVCenter
@@ -176,7 +178,7 @@ Item {
                 }
 
                 Rectangle {
-                    id: rectangle7
+                    id: heightStartRect
                     x: 8
                     y: 150
                     width: 244
@@ -187,7 +189,7 @@ Item {
                     border.color: "#208dfa"
 
                     MouseArea {
-                        id: mouseArea1
+                        id: heightStartMouseArea
                         anchors.fill: parent
                     }
 
