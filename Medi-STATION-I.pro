@@ -14,7 +14,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp \
     datetimer.cpp \
-    heightsensor.cpp
+    heightsensor.cpp \
+    temperaturesensor.cpp
 
 RESOURCES += qml.qrc \
     resources.qrc
@@ -32,6 +33,7 @@ target.path = /home/pi
 
 HEADERS += \
     datetimer.h \
-    heightsensor.h
+    heightsensor.h \
+    temperaturesensor.h
 
 LIBS += -lwiringPi

@@ -19,10 +19,12 @@ ApplicationWindow {
     // SIGNALS
     signal startPulseSensor()           // start pulse sensor
     signal startHeightSensor()          // start height sensor
+    signal startTempSensor()            // start temperature sensor
 
     // SLOTS
     function setPulseValue(text) {screenMainId.pulseScreen.pulseValueText.text = text}      // Change pulse value
     function setHeightValue(text) {screenMainId.heightScreen.heightValueText.text = text}   // Change height value
+    function setTempValue(text) {screenMainId.temperatureScreen.tempValueText.text = text}  // change temperature value
 
     header: TopPanel
     {
@@ -89,6 +91,7 @@ ApplicationWindow {
 
             pulseScreen.pulseStartMouseArea.onClicked: {startPulseSensor()}
             heightScreen.heightStartMouseArea.onClicked: {startHeightSensor()}
+            temperatureScreen.tempStartMouseArea.onClicked: {startTempSensor()}
         }
 
         ResultScreen

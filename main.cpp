@@ -6,6 +6,7 @@
 
 #include "datetimer.h"
 #include "heightsensor.h"
+#include "temperaturesensor.h"
 
 
 int main(int argc, char *argv[])
@@ -18,14 +19,6 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty())
         return -1;
 
-//    int fd;
-
-//    if ((fd = serialOpen ("/dev/ttyACM0", 9600)) < 0)
-//    {
-//        qDebug() << "Undable to open serial device";
-//        return -1;
-//    }
-
     if (wiringPiSetup() == -1)
     {
         qDebug() << "Unable to start wiringPi";
@@ -34,23 +27,17 @@ int main(int argc, char *argv[])
 
     // Step 1: get access to the root object
     QObject *rootObject = engine.rootObjects().first();
-    //QObject *qmlHeaderObject = rootObject->findChild<QObject*>("headerPanel");
-    //QObject *dateTimeObject = qmlHeaderObject->findChild<QObject*>("dateTimeText");
 
-    // Get Curent Date and Time
-    //QDateTime *date = new QDateTime(QDateTime::currentDateTime());
-    //qDebug() << date->toString();
     DateTimer currentDateTime;
     QObject::connect(&currentDateTime, SIGNAL(DateTimeString(QVariant)), rootObject, SLOT(setDate(QVariant)));
-
-    //PulseSensor pulseSensor;
-    //pulseSensor.Initialize();
-    //QObject::connect(rootObject, SIGNAL(startPulseSensor()), &pulseSensor, SLOT(StartPulseReading()));
-    //QObject::connect(&pulseSensor, SIGNAL(FinishedPulseReading(QVariant)), rootObject, SLOT(setPulseValue(QVariant)));
 
     HeightSensor heightSensor;
     QObject::connect(rootObject, SIGNAL(startHeightSensor()), &heightSensor, SLOT(StartHeightReading()));
     QObject::connect(&heightSensor, SIGNAL(FinishedHeightReading(QVariant)), rootObject, SLOT(setHeightValue(QVariant)));
+
+    TemperatureSensor tempSensor;
+    QObject::connect(rootObject, SIGNAL(startTempSensor()), &tempSensor, SLOT(StartTemperatureReading()));
+    QObject::connect(&tempSensor, SIGNAL(FinishedTemperatureReading(QVariant)), rootObject, SLOT(setTempValue(QVariant)));
 
     return app.exec();
 }

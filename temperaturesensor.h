@@ -1,12 +1,12 @@
-#ifndef HEIGHTSENSOR_H
-#define HEIGHTSENSOR_H
+#ifndef TEMPERATURESENSOR_H
+#define TEMPERATURESENSOR_H
 
 #include <QtCore>
 
 #include <wiringPi.h>
 #include <wiringSerial.h>
 
-class HeightSensor : public QThread
+class TemperatureSensor : public QThread
 {
     Q_OBJECT
 
@@ -19,21 +19,19 @@ class HeightSensor : public QThread
             qDebug() << "Undable to open serial device";
         }
 
-        serialPutchar (fd, 'A');
+        serialPutchar (fd, 'B');
 
-        //QThread::msleep(60);
         delay(60);
 
         while (serialDataAvail(fd))
         {
             int value = serialGetchar(fd);
 
-            qDebug() << value;
-            emit FinishedHeightReading(value);
-            //qDebug() << serialGetchar(fd);
+            qDebug() << "Value: " << value;
+            qDebug() << "Result: " << QString::number(value/ 10.0, 'g', 5);
+            emit FinishedTemperatureReading(QString::number(value/ 10.0, 'g', 5));
 
-            //QThread::msleep(200);
-            delay(200);
+            delay(1200);
         }
 
         serialClose(fd);
@@ -43,10 +41,10 @@ public:
     void Initialize();
 
 public slots:
-    void StartHeightReading();
+    void StartTemperatureReading();
 
 signals:
-    void FinishedHeightReading(QVariant text);
+    void FinishedTemperatureReading(QVariant text);
 };
 
-#endif // HEIGHTSENSOR_H
+#endif // TEMPERATURESENSOR_H

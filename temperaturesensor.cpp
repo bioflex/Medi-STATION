@@ -1,13 +1,13 @@
-#include "heightsensor.h"
+#include "temperaturesensor.h"
 
-void HeightSensor::StartHeightReading()
+void TemperatureSensor::StartTemperatureReading()
 {
-    HeightSensor *workerThread = this;
+    TemperatureSensor *workerThread = this;
 
     workerThread->start();
 }
 
-void HeightSensor::Initialize()
+void TemperatureSensor::Initialize()
 {
     int fd;
 
@@ -21,7 +21,7 @@ void HeightSensor::Initialize()
         qDebug() << "Unable to start wiringPi";
     }
 
-    serialPutchar (fd, 'A');
+    serialPutchar (fd, 'B');
 
     QThread::msleep(60);
 
@@ -30,7 +30,7 @@ void HeightSensor::Initialize()
         int value = serialGetchar(fd);
 
         qDebug() << value;
-        emit FinishedHeightReading(value);
+        emit FinishedTemperatureReading(value);
 
         QThread::msleep(300);
     }
