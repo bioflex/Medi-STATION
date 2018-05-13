@@ -5,6 +5,9 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias bpStartRect: bpStartRect
+    property alias bpStartMouseArea: bpStartMouseArea
+    property alias bloodpressureValueText: bloodpressureValueText
     property alias bloodPreRect: bloodPreRect
     property alias bloodPreMouseArea: bloodPreMouseArea
 
@@ -114,9 +117,9 @@ Item {
                     border.color: "#ffffff"
 
                     Text {
-                        id: text5
+                        id: bloodpressureValueText
                         color: "#ffffff"
-                        text: qsTr("120/80")
+                        text: "-"
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                         font.bold: true
@@ -176,7 +179,7 @@ Item {
                 }
 
                 Rectangle {
-                    id: rectangle6
+                    id: bpStartRect
                     y: 150
                     width: 244
                     height: 54
@@ -188,7 +191,7 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
 
                     MouseArea {
-                        id: mouseArea
+                        id: bpStartMouseArea
                         anchors.fill: parent
                     }
 

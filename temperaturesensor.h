@@ -25,14 +25,16 @@ class TemperatureSensor : public QThread
 
         while (serialDataAvail(fd))
         {
-            int value = serialGetchar(fd);
+            double value = serialGetchar(fd);
 
             qDebug() << "Value: " << value;
-            qDebug() << "Result: " << QString::number(value/ 10.0, 'g', 5);
-            emit FinishedTemperatureReading(QString::number(value/ 10.0, 'g', 5));
+            qDebug() << "Result: " << QString::number(value/ 1.00, 'g', 2);
+            emit FinishedTemperatureReading(QString::number(value/ 1.00, 'g', 2));
 
-            delay(1200);
+            delay(600);
         }
+
+        qDebug() << "Reading done...";
 
         serialClose(fd);
     }

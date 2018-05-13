@@ -5,6 +5,9 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias weightStartRect: weightStartRect
+    property alias weightStartMouseArea: weightStartMouseArea
+    property alias weightValueText: weightValueText
     property alias weightContinueMouseArea: weightContinueMouseArea
 
     ColumnLayout {
@@ -100,9 +103,9 @@ Item {
                     border.color: "#ffffff"
 
                     Text {
-                        id: text3
+                        id: weightValueText
                         color: "#ffffff"
-                        text: qsTr("74.2")
+                        text: qsTr("-")
                         font.bold: true
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.verticalCenter: parent.verticalCenter
@@ -200,7 +203,7 @@ Item {
                 }
 
                 Rectangle {
-                    id: rectangle8
+                    id: weightStartRect
                     x: 11
                     y: 150
                     width: 240
@@ -210,7 +213,7 @@ Item {
                     border.width: 2
                     border.color: "#208dfa"
                     MouseArea {
-                        id: nextMouseArea1
+                        id: weightStartMouseArea
                         x: -8
                         y: -254
                         anchors.fill: parent

@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 Item {
     width: 800
     height: 420
+    property alias userLoginErrorText: userLoginErrorText
     property alias keyBackRect: keyBackRect
     property alias keyZeroRect: keyZeroRect
     property alias keyNineRect: keyNineRect
@@ -99,6 +100,18 @@ Item {
                     horizontalAlignment: Text.AlignHCenter
                     placeholderText: "PIN"
                     anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                Text {
+                    id: userLoginErrorText
+                    x: 124
+                    y: 147
+                    color: "#cb2a2a"
+                    text: qsTr("")
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    font.bold: true
+                    font.pixelSize: 12
                 }
             }
 

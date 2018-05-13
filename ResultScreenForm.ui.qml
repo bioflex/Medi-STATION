@@ -5,6 +5,20 @@ import QtQuick.Layouts 1.3
 Item {
     width: 800
     height: 420
+    property alias resultsBpText: resultsBpText
+    property alias resultsBpRect: resultsBpRect
+    property alias resultsPulseText: resultsPulseText
+    property alias resultsPulseRect: resultsPulseRect
+    property alias resultsTempText: resultsTempText
+    property alias resultsTempRect: resultsTempRect
+    property alias resultsBmiText: resultsBmiText
+    property alias resultsBmiRect: resultsBmiRect
+    property alias resultsHeightText: resultsHeightText
+    property alias resultsHeightRect: resultsHeightRect
+    property alias resultsWeightText: resultsWeightText
+    property alias resultsWeightRect: resultsWeightRect
+    property alias resultsReturnRect: resultsReturnRect
+    property alias resultsReturnMouseArea: resultsReturnMouseArea
 
     ColumnLayout {
         id: columnLayout
@@ -51,7 +65,7 @@ Item {
             Layout.fillHeight: true
 
             Rectangle {
-                id: rectangle2
+                id: resultsWeightRect
                 x: 10
                 y: 10
                 width: 200
@@ -100,9 +114,9 @@ Item {
                     border.width: 2
 
                     Text {
-                        id: text4
+                        id: resultsWeightText
                         color: "#ffffff"
-                        text: qsTr("25.4 KG")
+                        text: qsTr("- KG")
                         font.bold: true
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
@@ -112,7 +126,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle4
+                id: resultsHeightRect
                 x: 220
                 y: 10
                 width: 200
@@ -159,9 +173,9 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
                     border.width: 2
                     Text {
-                        id: text8
+                        id: resultsHeightText
                         color: "#ffffff"
-                        text: qsTr("170.3 CM")
+                        text: qsTr("- CM")
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         font.pixelSize: 12
@@ -172,7 +186,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle6
+                id: resultsBmiRect
                 x: 430
                 y: 10
                 width: 200
@@ -221,9 +235,9 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
                     border.width: 2
                     Text {
-                        id: text10
+                        id: resultsBmiText
                         color: "#ffffff"
-                        text: qsTr("24.5")
+                        text: qsTr("-")
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         font.pixelSize: 12
@@ -234,7 +248,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle3
+                id: resultsTempRect
                 x: 10
                 y: 185
                 width: 200
@@ -281,9 +295,9 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
                     border.width: 2
                     Text {
-                        id: text5
+                        id: resultsTempText
                         color: "#ffffff"
-                        text: qsTr("37.4 C")
+                        text: qsTr("- C")
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         font.pixelSize: 12
@@ -294,7 +308,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle5
+                id: resultsPulseRect
                 x: 220
                 y: 185
                 width: 200
@@ -343,9 +357,9 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
                     border.width: 2
                     Text {
-                        id: text12
+                        id: resultsPulseText
                         color: "#ffffff"
-                        text: qsTr("76 BPM")
+                        text: qsTr("- BPM")
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         font.pixelSize: 12
@@ -356,7 +370,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle7
+                id: resultsBpRect
                 x: 430
                 y: 185
                 width: 200
@@ -406,9 +420,9 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
                     border.width: 2
                     Text {
-                        id: text14
+                        id: resultsBpText
                         color: "#ffffff"
-                        text: qsTr("120/90 mm/Hg")
+                        text: qsTr("- mm/Hg")
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         font.pixelSize: 12
@@ -419,7 +433,7 @@ Item {
             }
 
             Rectangle {
-                id: rectangle14
+                id: resultsReturnRect
                 x: 640
                 y: 10
                 width: 149
@@ -438,7 +452,7 @@ Item {
                 }
 
                 MouseArea {
-                    id: mouseArea
+                    id: resultsReturnMouseArea
                     anchors.fill: parent
                 }
 

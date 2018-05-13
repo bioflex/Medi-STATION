@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias pulseStartRect: pulseStartRect
     property alias pulseValueText: pulseValueText
     property alias pulseStartMouseArea: pulseStartMouseArea
     property alias pulseContinueMouseArea: pulseContinueMouseArea
@@ -117,7 +118,7 @@ Item {
                         x: 230
                         y: -232
                         color: "#ffffff"
-                        text: qsTr("76")
+                        text: "-"
                         verticalAlignment: Text.AlignVCenter
                         font.bold: true
                         anchors.verticalCenter: parent.verticalCenter
@@ -180,7 +181,7 @@ Item {
                 }
 
                 Rectangle {
-                    id: pulseStartReect
+                    id: pulseStartRect
                     x: 21
                     y: 150
                     width: 244

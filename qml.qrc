@@ -33,5 +33,6 @@
         <file>CustomService.qml</file>
         <file>CustomServiceForm.ui.qml</file>
         <file>ContactModel.qml</file>
+        <file>DataService.js</file>
     </qresource>
 </RCC>

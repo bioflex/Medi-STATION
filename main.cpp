@@ -7,6 +7,7 @@
 #include "datetimer.h"
 #include "heightsensor.h"
 #include "temperaturesensor.h"
+#include "pulsesensor.h"
 
 
 int main(int argc, char *argv[])
@@ -38,6 +39,10 @@ int main(int argc, char *argv[])
     TemperatureSensor tempSensor;
     QObject::connect(rootObject, SIGNAL(startTempSensor()), &tempSensor, SLOT(StartTemperatureReading()));
     QObject::connect(&tempSensor, SIGNAL(FinishedTemperatureReading(QVariant)), rootObject, SLOT(setTempValue(QVariant)));
+
+    PulseSensor pulseSensor;
+    QObject::connect(rootObject, SIGNAL(startPulseSensor()), &pulseSensor, SLOT(StartPulseReading()));
+    QObject::connect(&pulseSensor, SIGNAL(FinishedPulseReading(QVariant)), rootObject, SLOT(setPulseValue(QVariant)));
 
     return app.exec();
 }

@@ -1,13 +1,13 @@
-#include "heightsensor.h"
+#include "pulsesensor.h"
 
-void HeightSensor::StartHeightReading()
+void PulseSensor::StartPulseReading()
 {
-    HeightSensor *workerThread = this;
+    PulseSensor *workerThread = this;
 
     workerThread->start();
 }
 
-void HeightSensor::Initialize()
+void PulseSensor::Initialize()
 {
     int fd;
 
@@ -30,7 +30,7 @@ void HeightSensor::Initialize()
         int value = serialGetchar(fd);
 
         qDebug() << value;
-        emit FinishedHeightReading(value);
+        emit FinishedPulseReading(value);
 
         QThread::msleep(300);
     }

@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias heightStartRect: heightStartRect
     property alias heightValueText: heightValueText
     property alias heightStartMouseArea: heightStartMouseArea
     property alias heightContinueMouseArea: heightContinueMouseArea
@@ -119,7 +120,7 @@ Item {
                     Text {
                         id: heightValueText
                         color: "#ffffff"
-                        text: qsTr("170.2")
+                        text: "-"
                         verticalAlignment: Text.AlignVCenter
                         font.bold: true
                         anchors.horizontalCenter: parent.horizontalCenter

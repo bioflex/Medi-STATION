@@ -1,12 +1,12 @@
-#ifndef HEIGHTSENSOR_H
-#define HEIGHTSENSOR_H
+#ifndef PULSESENSOR_H
+#define PULSESENSOR_H
 
 #include <QtCore>
 
 #include <wiringPi.h>
 #include <wiringSerial.h>
 
-class HeightSensor : public QThread
+class PulseSensor : public QThread
 {
     Q_OBJECT
 
@@ -19,21 +19,24 @@ class HeightSensor : public QThread
             qDebug() << "Undable to open serial device";
         }
 
-        serialPutchar (fd, 'A');
+        serialPutchar (fd, 'C');
 
         //QThread::msleep(60);
-        delay(60);
+        //delay(60);
 
         while (serialDataAvail(fd))
         {
             int value = serialGetchar(fd);
 
+            if (value > 90)
+                value = 90;
+
             qDebug() << value;
-            emit FinishedHeightReading(value);
+            emit FinishedPulseReading(value);
             //qDebug() << serialGetchar(fd);
 
             //QThread::msleep(200);
-            delay(200);
+            delay(250);
         }
 
         qDebug() << "Reading done...";
@@ -45,10 +48,10 @@ public:
     void Initialize();
 
 public slots:
-    void StartHeightReading();
+    void StartPulseReading();
 
 signals:
-    void FinishedHeightReading(QVariant text);
+    void FinishedPulseReading(QVariant text);
 };
 
-#endif // HEIGHTSENSOR_H
+#endif // PULSESENSOR_H
