@@ -41,6 +41,8 @@ class PulseSensor : public QThread
 
         qDebug() << "Reading done...";
 
+        emit FinalReadingFinished();
+
         serialClose(fd);
     }
 
@@ -52,6 +54,7 @@ public slots:
 
 signals:
     void FinishedPulseReading(QVariant text);
+    void FinalReadingFinished();
 };
 
 #endif // PULSESENSOR_H

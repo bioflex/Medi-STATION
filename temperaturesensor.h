@@ -36,6 +36,8 @@ class TemperatureSensor : public QThread
 
         qDebug() << "Reading done...";
 
+        emit FinalReadingFinished();
+
         serialClose(fd);
     }
 
@@ -47,6 +49,7 @@ public slots:
 
 signals:
     void FinishedTemperatureReading(QVariant text);
+    void FinalReadingFinished();
 };
 
 #endif // TEMPERATURESENSOR_H

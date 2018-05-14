@@ -5,6 +5,8 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias weightStatusImage: weightStatusImage
+    property alias weightContinueRect: weightContinueRect
     property alias weightStartRect: weightStartRect
     property alias weightStartMouseArea: weightStartMouseArea
     property alias weightValueText: weightValueText
@@ -190,7 +192,7 @@ Item {
                     border.color: "#00c19090"
 
                     Image {
-                        id: image1
+                        id: weightStatusImage
                         x: 175
                         y: 13
                         width: 70
@@ -242,6 +244,7 @@ Item {
                 height: 60
                 color: "#ffffff"
                 radius: 10
+                visible: false
                 border.width: 2
                 border.color: "#208dfa"
 

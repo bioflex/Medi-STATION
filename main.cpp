@@ -34,15 +34,18 @@ int main(int argc, char *argv[])
 
     HeightSensor heightSensor;
     QObject::connect(rootObject, SIGNAL(startHeightSensor()), &heightSensor, SLOT(StartHeightReading()));
-    QObject::connect(&heightSensor, SIGNAL(FinishedHeightReading(QVariant)), rootObject, SLOT(setHeightValue(QVariant)));
+    QObject::connect(&heightSensor, SIGNAL(FinishedHeightReading(QVariant)), rootObject, SLOT(setHeightValue(QVariant)));    
+    QObject::connect(&heightSensor, SIGNAL(FinalReadingFinished()), rootObject, SLOT(heightReadingFinished()));             // final reading signal
 
     TemperatureSensor tempSensor;
     QObject::connect(rootObject, SIGNAL(startTempSensor()), &tempSensor, SLOT(StartTemperatureReading()));
     QObject::connect(&tempSensor, SIGNAL(FinishedTemperatureReading(QVariant)), rootObject, SLOT(setTempValue(QVariant)));
+    QObject::connect(&tempSensor, SIGNAL(FinalReadingFinished()), rootObject, SLOT(tempReadingFinished()));
 
     PulseSensor pulseSensor;
     QObject::connect(rootObject, SIGNAL(startPulseSensor()), &pulseSensor, SLOT(StartPulseReading()));
     QObject::connect(&pulseSensor, SIGNAL(FinishedPulseReading(QVariant)), rootObject, SLOT(setPulseValue(QVariant)));
+    QObject::connect(&pulseSensor, SIGNAL(FinalReadingFinished()), rootObject, SLOT(pulseReadingFinished()));
 
     return app.exec();
 }

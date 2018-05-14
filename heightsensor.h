@@ -38,6 +38,8 @@ class HeightSensor : public QThread
 
         qDebug() << "Reading done...";
 
+        emit FinalReadingFinished();
+
         serialClose(fd);
     }
 
@@ -49,6 +51,7 @@ public slots:
 
 signals:
     void FinishedHeightReading(QVariant text);
+    void FinalReadingFinished();
 };
 
 #endif // HEIGHTSENSOR_H

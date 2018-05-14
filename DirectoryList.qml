@@ -7,10 +7,11 @@ DirectoryListForm
         id: contactDelegate
         Item
         {
-            width: 800; height: 50
+            width: 800; height: 80
             Column
             {
                 Text { text: '<b>Name:</b> ' + name }
+                Text { text: '<b>Address:</b> ' + address}
                 Text { text: '<b>Number:</b> ' + number }
             }
         }

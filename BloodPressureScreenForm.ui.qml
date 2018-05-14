@@ -5,11 +5,12 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias bloodpressureStatusImage: bloodpressureStatusImage
+    property alias bloodpressureContinueRect: bloodpressureContinueRect
+    property alias bloodpressureContinueMouseArea: bloodpressureContinueMouseArea
     property alias bpStartRect: bpStartRect
     property alias bpStartMouseArea: bpStartMouseArea
     property alias bloodpressureValueText: bloodpressureValueText
-    property alias bloodPreRect: bloodPreRect
-    property alias bloodPreMouseArea: bloodPreMouseArea
 
     ColumnLayout {
         id: columnLayout
@@ -150,6 +151,18 @@ Item {
                         font.pixelSize: 16
                     }
                 }
+
+                Image {
+                    id: bloodpressureStatusImage
+                    x: 108
+                    y: 62
+                    width: 70
+                    height: 70
+                    fillMode: Image.PreserveAspectFit
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: "resources/icons/statusred.png"
+                }
             }
 
             Rectangle {
@@ -207,18 +220,19 @@ Item {
             }
 
             Rectangle {
-                id: bloodPreRect
+                id: bloodpressureContinueRect
                 x: 340
                 y: 265
                 width: 260
                 height: 60
                 color: "#ffffff"
                 radius: 10
+                visible: false
                 border.color: "#208dfa"
                 border.width: 2
 
                 MouseArea {
-                    id: bloodPreMouseArea
+                    id: bloodpressureContinueMouseArea
                     anchors.fill: parent
                 }
 

@@ -4,6 +4,7 @@ import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 
 import "DataService.js" as Services
+import "MockService.js" as Mock
 
 ApplicationWindow {
     visible: true
@@ -26,6 +27,8 @@ ApplicationWindow {
     property bool isCustomService: false
     property bool isBmi: false
 
+    property int offset: 200
+
     // Initialize
     function initialize()
     {
@@ -42,7 +45,7 @@ ApplicationWindow {
         user_height = "-";
         user_bmi = "-";
         user_temperature = "-";
-        user_pulse = "";
+        user_pulse = "-";
         user_bloodpressure = "-";
 
         screenMainId.weightScreen.weightStartRect.visible = true;
@@ -57,24 +60,32 @@ ApplicationWindow {
         screenMainId.pulseScreen.pulseValueText.text = "-";
         screenMainId.bloodPressureScreen.bloodpressureValueText.text = "-";
 
-        resultId.resultsWeightRect.visible = true;
-        resultId.resultsWeightText.text = "";
-        resultId.resultsHeightRect.visible = true;
-        resultId.resultsHeightText.text = "";
-        resultId.resultsPulseRect.visible = true;
-        resultId.resultsPulseText.text = "";
-        resultId.resultsBmiRect.visible = true;
-        resultId.resultsBmiText.text = "";
-        resultId.resultsTempRect.visible = true;
-        resultId.resultsTempText.text = "";
-        resultId.resultsBpRect.visible = true;
-        resultId.resultsBpText.text = "";
+        resultId.resultsWeightText.text = "- KG";
+        resultId.resultsHeightText.text = "- CM";
+        resultId.resultsPulseText.text = "- BPM";
+        resultId.resultsBmiText.text = "-";
+        resultId.resultsTempText.text = "- &#176; C";
+        resultId.resultsBpText.text = "- mmHg";
 
         isCustomService = false;
         isBmi = false;
 
         mainStack.currentIndex = 0;
         screenMainId.detailStackLayout.currentIndex = 0;
+
+        topPanel.backRect.visible = false
+
+        screenMainId.weightScreen.weightStatusImage.source = 'resources/icons/statusred.png'
+        screenMainId.heightScreen.heightStatusImage.source = 'resources/icons/statusred.png'
+        screenMainId.temperatureScreen.tempStatusImage.source = 'resources/icons/statusred.png'
+        screenMainId.pulseScreen.pulseStatusImage.source = 'resources/icons/statusred.png'
+        screenMainId.bloodPressureScreen.bloodpressureStatusImage.source = 'resources/icons/statusred.png'
+
+        screenMainId.weightScreen.weightContinueRect.visible = false
+        screenMainId.heightScreen.heightContinueRect.visible = false
+        screenMainId.temperatureScreen.tempContinueRect.visible = false
+        screenMainId.pulseScreen.pulseContinueRect.visible = false
+        screenMainId.bloodPressureScreen.bloodpressureContinueRect.visible = false
     }
 
     // SLOT for Changeing Date and Time
@@ -90,16 +101,28 @@ ApplicationWindow {
 
     // SLOTS
     function setPulseValue(text) {screenMainId.pulseScreen.pulseValueText.text = text; resultId.resultsPulseText.text = text + " BPM"}      // Change pulse value
-    function setHeightValue(text) {screenMainId.heightScreen.heightValueText.text = text; resultId.resultsHeightText.text = text + " CM"}   // Change height value
-    function setTempValue(text) {screenMainId.temperatureScreen.tempValueText.text = text; resultId.resultsTempText.text = text + " C"}  // change temperature value
+    function setHeightValue(text) {screenMainId.heightScreen.heightValueText.text = heightOffset(text); resultId.resultsHeightText.text = heightOffset(text) + " CM"}   // Change height value
+    function setTempValue(text) {screenMainId.temperatureScreen.tempValueText.text = text; resultId.resultsTempText.text = text + " &#176; C"}  // change temperature value
+
+    function heightReadingFinished(){screenMainId.heightScreen.heightStatusImage.source = 'resources/icons/statusgreen.png' ;screenMainId.heightScreen.heightContinueRect.visible = true}
+    function pulseReadingFinished(){screenMainId.pulseScreen.pulseStatusImage.source = 'resources/icons/statusgreen.png'; screenMainId.pulseScreen.pulseContinueRect.visible = true}
+    function tempReadingFinished(){screenMainId.temperatureScreen.tempStatusImage.source = 'resources/icons/statusgreen.png'; screenMainId.temperatureScreen.tempContinueRect.visible = true}
+
+    // Mock Functions
+    function setWeightValue() {screenMainId.weightScreen.weightValueText.text = Mock.startWeightSensor(); resultId.resultsWeightText.text = screenMainId.weightScreen.weightValueText.text + " KG"}
+    function setBloodpressureValue() {screenMainId.bloodPressureScreen.bloodpressureValueText.text = Mock.startBloodpressureSensor(); resultId.resultsBpText.text = screenMainId.bloodPressureScreen.bloodpressureValueText.text + " mmHg"}
+    function setBmiValue(weight, height) {return (weight / Math.pow(height / 100, 2)).toFixed(2)}
+
+    // Functions
+    function heightOffset(height){return (height > 0) ? (offset - height) : 0}
 
     header: TopPanel
     {
         id: topPanel
         objectName: "headerPanel"
 
-        homeMouseArea.onClicked: mainStack.currentIndex = 0
-        helpMouseArea.onClicked: screenMainId.detailStackLayout.currentIndex = 0
+        homeMouseArea.onClicked: initialize()//mainStack.currentIndex = 0
+        backMouseArea.onClicked: {mainStack.currentIndex = 2; backRect.visible = false}
         quitMouseArea.onClicked: Qt.quit()
     }
 
@@ -154,10 +177,10 @@ ApplicationWindow {
         {
             id: serviceId
             objectName: "serviceOptionPage"
-            fullServiceMouseArea.onClicked: mainStack.currentIndex = 4
-            customServiceMouseArea.onClicked: {mainStack.currentIndex = 3; isCustomService = true}
-            findHealthMouseArea.onClicked: mainStack.currentIndex = 6
-            findDirectoryMouseArea.onClicked: mainStack.currentIndex = 7;
+            fullServiceMouseArea.onClicked: {mainStack.currentIndex = 4}
+            customServiceMouseArea.onClicked: {mainStack.currentIndex = 3;topPanel.backRect.visible = true; isCustomService = true}
+            findHealthMouseArea.onClicked: {mainStack.currentIndex = 6; topPanel.backRect.visible = true;}
+            findDirectoryMouseArea.onClicked: {mainStack.currentIndex = 7; topPanel.backRect.visible = true;}
         }
 
         CustomService
@@ -165,12 +188,12 @@ ApplicationWindow {
             id: customServiceId
             objectName: "customeServicePage"
 
-            weightSelectMouseArea.onClicked: {mainStack.currentIndex =  4; screenMainId.detailStackLayout.currentIndex = 0}
-            heightSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 1}
-            bmiSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 0; isBmi = true}
-            tempSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 2}
-            pulseSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 3}
-            bpSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 4}
+            weightSelectMouseArea.onClicked: {mainStack.currentIndex =  4; screenMainId.detailStackLayout.currentIndex = 0; topPanel.backRect.visible = false;}
+            heightSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 1; topPanel.backRect.visible = false;}
+            bmiSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 0; isBmi = true; topPanel.backRect.visible = false;}
+            tempSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 2; topPanel.backRect.visible = false;}
+            pulseSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 3; topPanel.backRect.visible = false;}
+            bpSelectMouseArea.onClicked: {mainStack.currentIndex = 4; screenMainId.detailStackLayout.currentIndex = 4; topPanel.backRect.visible = false;}
 
         }
 
@@ -180,7 +203,7 @@ ApplicationWindow {
             objectName: "screeningMainPage"
 
             weightScreen.weightContinueMouseArea.onClicked:
-            {
+            {                
                 if(isCustomService)
                 {
                     if(isBmi)
@@ -192,14 +215,49 @@ ApplicationWindow {
                     detailStackLayout.currentIndex++
             }
 
-            heightScreen.heightContinueMouseArea.onClicked: {if(isCustomService)mainStack.currentIndex = 5; else detailStackLayout.currentIndex++}
+            heightScreen.heightContinueMouseArea.onClicked:
+            {
+                if(isCustomService)
+                {
+                    if(isBmi)
+                    resultId.resultsBmiText.text = setBmiValue(parseInt(screenMainId.weightScreen.weightValueText.text), parseInt(screenMainId.heightScreen.heightValueText.text))
+
+                    mainStack.currentIndex = 5
+                }
+                else
+                {
+                    resultId.resultsBmiText.text = setBmiValue(parseInt(screenMainId.weightScreen.weightValueText.text), parseInt(screenMainId.heightScreen.heightValueText.text))
+                    detailStackLayout.currentIndex++
+                }
+            }
+
             temperatureScreen.tempContinueMouseArea.onClicked: {if(isCustomService)mainStack.currentIndex = 5; else detailStackLayout.currentIndex++}
             pulseScreen.pulseContinueMouseArea.onClicked: {if(isCustomService)mainStack.currentIndex = 5; else detailStackLayout.currentIndex++}
-            bloodPressureScreen.bloodPreMouseArea.onClicked: mainStack.currentIndex = 5
 
-            pulseScreen.pulseStartMouseArea.onClicked: {startPulseSensor(); pulseScreen.pulseStartRect.visible = false;}
-            heightScreen.heightStartMouseArea.onClicked: {startHeightSensor()}
+            bloodPressureScreen.bloodpressureContinueMouseArea.onClicked:
+            {
+
+                mainStack.currentIndex = 5
+            }
+
+            weightScreen.weightStartMouseArea.onClicked:
+            {
+                setWeightValue();
+                weightScreen.weightStartRect.visible = false;
+                weightScreen.weightContinueRect.visible = true;
+                weightScreen.weightStatusImage.source = 'resources/icons/statusgreen.png'
+            }
+            heightScreen.heightStartMouseArea.onClicked: {startHeightSensor(); heightScreen.heightStartRect.visible = false}
             temperatureScreen.tempStartMouseArea.onClicked: {startTempSensor(); temperatureScreen.tempStartRect.visible = false}
+            pulseScreen.pulseStartMouseArea.onClicked: {startPulseSensor(); pulseScreen.pulseStartRect.visible = false;}
+
+            bloodPressureScreen.bpStartMouseArea.onClicked:
+            {
+                setBloodpressureValue();
+                bloodPressureScreen.bpStartRect.visible = false;
+                bloodPressureScreen.bloodpressureContinueRect.visible = true
+                bloodPressureScreen.bloodpressureStatusImage.source = 'resources/icons/statusgreen.png'
+            }
         }
 
         ResultScreen
@@ -211,12 +269,12 @@ ApplicationWindow {
             {
                 if(user_token != "")
                 {
-                    user_weight = "" + Math.floor(Math.random() * (100 - 40)) + 40//screenMainId.weightScreen.weightValueText.text;
-                    user_height = "" + Math.floor(Math.random() * (170 - 30)) + 30//screenMainId.heightScreen.heightValueText.text;
-                    user_bmi = "" + Math.floor(Math.random() * (35 - 7)) + 7;
-                    user_temperature = "" + Math.floor(Math.random() * (35 - 30)) + 30//screenMainId.temperatureScreen.tempValueText.text;
-                    user_pulse = "" + Math.floor(Math.random() * (100 - 45)) + 45//screenMainId.pulseScreen.pulseValueText.text;
-                    user_bloodpressure = "" + Math.floor(Math.random() * (130 - 70)) + 70//screenMainId.bloodPressureScreen.bloodpressureValueText.text;
+                    user_weight = screenMainId.weightScreen.weightValueText.text;
+                    user_height = screenMainId.heightScreen.heightValueText.text;
+                    user_bmi = resultId.resultsBmiText.text
+                    user_temperature = screenMainId.temperatureScreen.tempValueText.text;
+                    user_pulse = screenMainId.pulseScreen.pulseValueText.text;
+                    user_bloodpressure = screenMainId.bloodPressureScreen.bloodpressureValueText.text;
 
                     Services.post_data( function(resp) {
                         print('handle post data resp: ' + JSON.stringify(resp));

@@ -5,9 +5,10 @@ import QtQuick.Controls 2.2
 Item {
     width: 800
     height: 50
+    property alias backRect: backRect
+    property alias backMouseArea: backMouseArea
     property alias quitMouseArea: quitMouseArea
     property alias statusText: statusText
-    property alias helpMouseArea: helpMouseArea
     property alias image: image
     property alias dateTimeText: dateTimeText
     property alias homeMouseArea: homeMouseArea
@@ -108,11 +109,12 @@ Item {
         }
 
         Rectangle {
-            id: helpRect
-            x: 745
+            id: backRect
+            x: 700
             y: 2
-            width: 45
+            width: 90
             height: 45
+            visible: false
             gradient: Gradient {
                 GradientStop {
                     position: 0
@@ -126,24 +128,21 @@ Item {
             }
 
             Image {
-                id: helpImage
-                width: 40
-                height: 40
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.horizontalCenter: parent.horizontalCenter
+                id: backImage
+                anchors.fill: parent
                 fillMode: Image.PreserveAspectFit
-                source: "resources/icons/help3.png"
+                source: "resources/icons/back-button.png"
             }
 
             MouseArea {
-                id: helpMouseArea
+                id: backMouseArea
                 anchors.fill: parent
             }
         }
 
         Rectangle {
             id: homeRect
-            x: 691
+            x: 570
             y: 2
             width: 45
             height: 45
@@ -178,7 +177,7 @@ Item {
 
         Rectangle {
             id: quitRect
-            x: 635
+            x: 500
             y: 2
             width: 45
             height: 45

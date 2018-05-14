@@ -34,5 +34,6 @@
         <file>CustomServiceForm.ui.qml</file>
         <file>ContactModel.qml</file>
         <file>DataService.js</file>
+        <file>MockService.js</file>
     </qresource>
 </RCC>

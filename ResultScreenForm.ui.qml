@@ -238,6 +238,7 @@ Item {
                         id: resultsBmiText
                         color: "#ffffff"
                         text: qsTr("-")
+                        textFormat: Text.RichText
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         font.pixelSize: 12
@@ -297,7 +298,8 @@ Item {
                     Text {
                         id: resultsTempText
                         color: "#ffffff"
-                        text: qsTr("- C")
+                        text: qsTr("- &#176; C")
+                        textFormat: Text.RichText
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         font.pixelSize: 12
@@ -442,12 +444,12 @@ Item {
                 gradient: Gradient {
                     GradientStop {
                         position: 0
-                        color: "#243949"
+                        color: "#d68cf3"
                     }
 
                     GradientStop {
                         position: 1
-                        color: "#517fa4"
+                        color: "#8d3ba5"
                     }
                 }
 
@@ -459,9 +461,9 @@ Item {
                 Text {
                     id: text15
                     width: 123
-                    height: 89
+                    height: 149
                     color: "#ffffff"
-                    text: qsTr("Return to Home Screen <br>(Save results and Logout)")
+                    text: qsTr("Save Results and return to Home Screen <br>(Logged-in Users Only)")
                     font.bold: true
                     wrapMode: Text.WordWrap
                     anchors.verticalCenter: parent.verticalCenter
@@ -500,7 +502,7 @@ Item {
                     width: 122
                     height: 57
                     color: "#ffffff"
-                    text: qsTr("Return to Home Screen")
+                    text: qsTr("")
                     wrapMode: Text.WordWrap
                     font.bold: true
                     font.pixelSize: 14

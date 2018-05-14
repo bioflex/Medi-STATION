@@ -5,6 +5,8 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias heightStatusImage: heightStatusImage
+    property alias heightContinueRect: heightContinueRect
     property alias heightStartRect: heightStartRect
     property alias heightValueText: heightValueText
     property alias heightStartMouseArea: heightStartMouseArea
@@ -151,6 +153,18 @@ Item {
                         font.pixelSize: 24
                     }
                 }
+
+                Image {
+                    id: heightStatusImage
+                    x: 104
+                    y: 71
+                    width: 70
+                    height: 70
+                    fillMode: Image.PreserveAspectFit
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: "resources/icons/statusred.png"
+                }
             }
 
             Rectangle {
@@ -213,6 +227,7 @@ Item {
                 height: 60
                 color: "#ffffff"
                 radius: 10
+                visible: false
                 border.width: 2
                 border.color: "#208dfa"
 

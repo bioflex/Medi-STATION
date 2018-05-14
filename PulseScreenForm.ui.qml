@@ -5,6 +5,8 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias pulseStatusImage: pulseStatusImage
+    property alias pulseContinueRect: pulseContinueRect
     property alias pulseStartRect: pulseStartRect
     property alias pulseValueText: pulseValueText
     property alias pulseStartMouseArea: pulseStartMouseArea
@@ -151,6 +153,18 @@ Item {
                         font.pixelSize: 23
                     }
                 }
+
+                Image {
+                    id: pulseStatusImage
+                    x: 101
+                    y: 75
+                    width: 70
+                    height: 70
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    fillMode: Image.PreserveAspectFit
+                    source: "resources/icons/statusred.png"
+                }
             }
 
             Rectangle {
@@ -217,6 +231,7 @@ Item {
                 height: 60
                 color: "#ffffff"
                 radius: 10
+                visible: false
                 border.color: "#208dfa"
                 border.width: 2
 

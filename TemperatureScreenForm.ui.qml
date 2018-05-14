@@ -5,6 +5,8 @@ import QtQuick.Layouts 1.3
 Item {
     width: 620
     height: 420
+    property alias tempStatusImage: tempStatusImage
+    property alias tempContinueRect: tempContinueRect
     property alias tempStartRect: tempStartRect
     property alias tempValueText: tempValueText
     property alias tempStartMouseArea: tempStartMouseArea
@@ -144,12 +146,25 @@ Item {
                     Text {
                         id: text3
                         color: "#ffffff"
-                        text: qsTr("C")
+                        text: qsTr("&#176; C")
+                        textFormat: Text.RichText
                         font.bold: true
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                         font.pixelSize: 23
                     }
+                }
+
+                Image {
+                    id: tempStatusImage
+                    x: 100
+                    y: 50
+                    width: 70
+                    height: 70
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    fillMode: Image.PreserveAspectFit
+                    source: "resources/icons/statusred.png"
                 }
             }
 
@@ -215,6 +230,7 @@ Item {
                 height: 60
                 color: "#ffffff"
                 radius: 10
+                visible: false
                 border.color: "#208dfa"
                 border.width: 2
 
